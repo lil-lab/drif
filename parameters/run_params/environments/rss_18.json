@@ -3,7 +3,7 @@
   {
     "simulator_path": "~/shelf_space/droning/unreal_project/DroneSimulator/LinuxNoEditor/MyProject5.sh",
     "sim_config_dir": "/home/clic/unreal_config/",
-    "config_dir": "/home/clic/shelf_space/unreal_config_corner_4x_test/",
+    "config_dir": "/home/clic/shelf_space/unreal_config_corner_4x/",
     "real_drone": false,
     "templates": true
   }
