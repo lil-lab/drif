@@ -1,5 +1,5 @@
 # Dynamic Robot Instruction Following
-Machine learning system for following natural language navigation instructions on a realistic simulated quadcopter. You may view a demo video for the CoRL paper here:
+Machine learning system for following natural language navigation instructions on a realistic simulated quadcopter. Demo video:
 [![Demo video](http://www.cs.cornell.edu/~valts/img/video_thumbnail.png)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
 
 ### Intro
@@ -7,8 +7,6 @@ This is the code repository for the following two papers:
 "Mapping Navigation Instructions to Continuous Control Actions with Position-Visitation Prediction" Valts Blukis, Dipendra Misra, Ross A. Knepper and Yoav Artzi (CoRL 2018)  
 "Following High-Level Navigation Instructions on a Simulated Quadcopter with Imitation Learning"
 Valts Blukis, Nataly Brukhim, Andrew Bennett, Ross A. Knepper and Yoav Artzi (RSS 2018)  
-
-**The code is undergoing some final tests and will arrive here shortly!**  
 
 **Simulator and Environment** The simulator is built in Unreal Engine and uses a slightly customized version of the Microsoft AirSim plugin to simulate realistic quadcopter dynamics.
 
