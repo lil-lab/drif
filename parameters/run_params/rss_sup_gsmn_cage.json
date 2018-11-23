@@ -1,0 +1,37 @@
+{
+  "@include": [
+    "environments/cage_1",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics",
+    "include/units",
+    "include/training/training",
+    "include/training/dagger",
+    "include/training/supervised",
+    "include/models/gsmn_cage"
+  ],
+  "Setup":
+  {
+    "model": "gsmn",
+    "model_file": false,
+    "run_name": "gsmn_sup",
+    "num_workers": 1,
+    "cuda": true,
+    "max_envs": -1
+  },
+  "Rollout":
+  {
+    "oracle_type": "SimpleCarrotPlanner"
+  },
+  "SimpleCarrotPlanner":
+  {
+    "vel_x": 1.0,
+    "min_vel_x": 0.1,
+    "k_yaw": 0.5,
+    "K_Offset": 0.1,
+    "LOOKAHEAD": 12,
+    "accelerate_steps": 3
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "Setup":
+  {
+    "model": "oracle",
+    "model_file": "",
+    "run_name": "base_run",
+    "num_workers": 1,
+    "first_worker": 0,
+    "max_envs": -1,
+    "env_range_start": 0,
+    "cuda": true,
+
+    "eval_env_set": "dev",
+    "eval_landmark_side": true,
+    "eval_nl": true,
+    "eval_pretrain": true,
+
+    "restore_weights_name": "",
+    "fix_restored_weights": false,
+    "debug": false,
+
+    "trajectory_length": 220,
+    "write_summaries": true,
+    "prune_ambiguous": false
+  }
+}

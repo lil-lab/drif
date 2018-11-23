@@ -1,0 +1,9 @@
+{
+  "Data":
+  {
+    "noisy_pos_variance": 1,
+    "noisy_rot_variance": 0.5,
+    "img_w": 128,
+    "img_h": 72
+  }
+}

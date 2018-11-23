@@ -1,0 +1,27 @@
+# DAgger GSMN wo Jgoal
+
+--model
+gsmn_wo_jgoal
+--model_file
+rss/supervised_gsmn_wo_jgoal_rss_sup_gsmn_wo_jgoal
+--run_name
+gsmn_dag_wo_jgoal
+--setup_name
+rss_sup_gsmn_g
+--cuda
+--eval_landmark_side
+--num_workers
+2
+
+--model
+gs_fpv_mem
+--model_file
+rss/supervised_gs_fpv_mem_gs_fpv_mem_sup
+--run_name
+gs_fpv_mem_dag
+--setup_name
+rss_sup_gsmn_g
+--cuda
+--eval_landmark_side
+--num_workers
+2

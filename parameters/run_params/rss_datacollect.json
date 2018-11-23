@@ -1,0 +1,23 @@
+{
+  "@include": [
+    "environments/rss_18",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics",
+    "include/dagger"
+  ],
+  "Setup":
+  {
+    "model": "oracle",
+    "run_name": "data_collect_sep_04",
+    "num_workers": 1,
+    "cuda": true,
+    "max_envs": 50
+  },
+  "Rollout":
+  {
+    "oracle_type": "SimpleCarrotPlanner"
+  }
+}

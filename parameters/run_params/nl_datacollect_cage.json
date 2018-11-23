@@ -1,0 +1,34 @@
+{
+  "@include": [
+    "airsim/settings_cage_datacollect",
+    "environments/cage_1",
+    "include/setup_base",
+    "include/units_cage",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/training/dagger"
+  ],
+  "Setup":
+  {
+    "model": "oracle",
+    "run_name": "data_collect_sep_04",
+    "num_workers": 1,
+    "cuda": true
+  },
+  "Rollout":
+  {
+    "oracle_type": "BasicCarrotPlanner"
+  },
+  "BasicCarrotPlanner":
+  {
+    "end_dst": 120.0,
+    "stop_dst": 50.0,
+    "accelerate_steps": 1
+  },
+  "PomdpInterface":
+  {
+    "flight_height": 240
+  }
+}
