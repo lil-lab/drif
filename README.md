@@ -66,7 +66,7 @@ To best analyze the power of LingUNet for instruction grounding, we ablate the c
 `python interactive/interactive_top_down_pred.py interactive_top_down`  
 
 This command will launch the drone simulator and a simple user interface where you can key in instructions, see the instruction grounding results produced by LingUNet, as well as the drone following the predicted trajectories in simulation. The following video is a screen-capture of the interactive demo:  
-<img src="http://www.cs.cornell.edu/~valts/img/full_obs_thumbnail.PNG" alt="drawing" width="200"/>
+[<img src="http://www.cs.cornell.edu/~valts/img/full_obs_thumbnail.PNG" alt="drawing" width="400"/>](https://www.youtube.com/watch?v=aWpyzmm23Po)
 <!--[![Demo video](http://www.cs.cornell.edu/~valts/img/full_obs_thumbnail.PNG)](https://www.youtube.com/watch?v=aWpyzmm23Po)-->
 
 
