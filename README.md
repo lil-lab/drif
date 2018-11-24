@@ -1,6 +1,6 @@
 # Dynamic Robot Instruction Following
 Machine learning system for following natural language navigation instructions on a realistic simulated quadcopter. Demo video:
-[![Demo video](http://www.cs.cornell.edu/~valts/img/video_thumbnail.png)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![Demo video](http://www.cs.cornell.edu/~valts/img/video_thumbnail.png)](https://www.youtube.com/watch?v=hbeU64UX3CM)
 
 ### Intro
 This is the code repository for the following two papers:  
@@ -60,12 +60,15 @@ We have provided the models trained as part of the CoRL 2018 paper with unreal_c
 
 `python eval/evaluate.py corl_pvn_eval_pretrained_dev`  
 
-### Top-down view interactive language reasoning
+### Top-down view interactive language reasoning demo
 To best analyze the power of LingUNet for instruction grounding, we ablate the challenges introduced by partial first-person observations, and reason directly on the top-down view of the environment. To see the model in action, run:  
 
 `python interactive/interactive_top_down_pred.py interactive_top_down`  
 
-This command will launch the drone simulator and a simple user interface where you can key in instructions, see the instruction grounding results produced by LingUNet, as well as the drone following the predicted trajectories in simulation.  
+This command will launch the drone simulator and a simple user interface where you can key in instructions, see the instruction grounding results produced by LingUNet, as well as the drone following the predicted trajectories in simulation. The following video is a screen-capture of the interactive demo:  
+<img src="http://www.cs.cornell.edu/~valts/img/full_obs_thumbnail.PNG" alt="drawing" width="200"/>
+<!--[![Demo video](http://www.cs.cornell.edu/~valts/img/full_obs_thumbnail.PNG)](https://www.youtube.com/watch?v=aWpyzmm23Po)-->
+
 
 ### CoRL 2018 training + experiments
 1. Roll-out oracle policy on all instructions and collect a dataset of images, poses and instructions:  
