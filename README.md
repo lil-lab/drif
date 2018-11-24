@@ -1,6 +1,7 @@
 # Dynamic Robot Instruction Following
 Machine learning system for following natural language navigation instructions on a realistic simulated quadcopter. Demo video:
-[![Demo video](http://www.cs.cornell.edu/~valts/img/video_thumbnail.png)](https://www.youtube.com/watch?v=hbeU64UX3CM)
+<!--[![Demo video](http://www.cs.cornell.edu/~valts/img/video_thumbnail.png)](https://www.youtube.com/watch?v=hbeU64UX3CM)-->
+[<img src="http://www.cs.cornell.edu/~valts/img/video_thumbnail.PNG" alt="drawing" width="500"/>](https://www.youtube.com/watch?v=hbeU64UX3CM)
 
 ### Intro
 This is the code repository for the following two papers:  
