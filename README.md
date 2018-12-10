@@ -8,6 +8,7 @@ This is the code repository for the following two papers:
 "Mapping Navigation Instructions to Continuous Control Actions with Position-Visitation Prediction" Valts Blukis, Dipendra Misra, Ross A. Knepper and Yoav Artzi (CoRL 2018)  
 "Following High-Level Navigation Instructions on a Simulated Quadcopter with Imitation Learning"
 Valts Blukis, Nataly Brukhim, Andrew Bennett, Ross A. Knepper and Yoav Artzi (RSS 2018)  
+If you could use some help getting the simulator and experiments running, please don't hesitate to [contact me](http://www.cs.cornell.edu/~valts) and I'll be happy to help.
 
 **Simulator and Environment** The simulator is built in Unreal Engine and uses a slightly customized version of the Microsoft AirSim plugin to simulate realistic quadcopter dynamics.
 
