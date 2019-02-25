@@ -52,7 +52,7 @@ After the above steps, you should be ready to run experiments.
 Before running any experiments, you'll have to add the project root directory into your python path. The init.sh script does this for you. The working directory is assumed to be mains/.  
 
 `cd drif`  
-`./init.sh`  
+`source init.sh`
 `cd mains`  
 
 All experiments are launched by running one of the provided python scripts, and providing a config name as the only argument. Here are some examples.  

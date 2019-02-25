@@ -38,6 +38,7 @@ PORTS = {
     15: 10015
 }
 
+
 def spawn_worker(instance_id, port):
     res_x = 640
     res_y = 480
@@ -56,11 +57,18 @@ def spawn_worker(instance_id, port):
     subprocess.Popen(command, env=os.environ, shell=True)
 
 
+def spawn_headless_worker(instance_id, port):
+    command = paths.get_sim_executable_path() + " WorkerID " + str(instance_id) + " ApiServerPort " + str(port)
+    subprocess.Popen(command, env=os.environ, shell=True)
+
+
 def spawn_workers(num_workers):
     for i in range(num_workers):
         port = PORTS[i]
-        spawn_worker(i, port)
-
+        if P.get_current_parameters()["Environment"].get("headless"):
+            spawn_headless_worker(i, port)
+        else:
+            spawn_worker(i, port)
 
 def startAirSim(controller, instance_id, port):
     try:
@@ -68,9 +76,12 @@ def startAirSim(controller, instance_id, port):
     except Exception as e:
         print(e)
         print("Failed to connect to client on port " + str(port) + "! Starting new AirSim...")
-        spawn_worker(instance_id, port)
+        if P.get_current_parameters()["Environment"].get("headless"):
+            spawn_headless_worker(instance_id, port)
+        else:
+            spawn_worker(instance_id, port)
 
-        time.sleep(8)
+        time.sleep(12)
         controller._start()
 
 

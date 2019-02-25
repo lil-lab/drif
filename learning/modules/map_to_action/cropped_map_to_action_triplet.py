@@ -83,7 +83,7 @@ class CroppedMapToActionTriplet(CudaModule):
             else:
                 maps_in = maps_s
 
-            DBG = run_md.IS_ROLLOUT# and False
+            DBG = run_md.IS_ROLLOUT and False
             if DBG:
                 for i in range(len(maps_s)):
                     Presenter().show_image(maps_in.data[i], "d", torch=True, waitkey=1, scale=8)
