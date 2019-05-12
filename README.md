@@ -91,7 +91,8 @@ This step takes 1-2 hours.
 4. Train Stage 2 - Action Generation with imitation learning. Run DAggerFM for 100 iterations:  
 `python train/train_dagger.py corl_pvn_finetune_stage2`  
 This will save the final trained model in "config_dir/models/dagger_pvn_full_pretrain_corl_pvn_stage2.pytorch"  
-This step takes about 9 hours  
+This step takes about 9 hours.
+Caution: Use CUDA_VISIBLE_DEVICES to restrict PyTorch GPU computation to a different GPU than the one that is running AirSim on your system (usually either GPU0 or wherever the monitor is plugged in. Use nvidia-smi to find out).
 
 5. Evaluate the trained model on the development set:  
 `python eval/evaluate.py corl_pvn_eval_dev`  
