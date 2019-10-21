@@ -1,7 +1,0 @@
-{
-  "@include": [
-    "airsim/settings_cv_overhead",
-    "environments/cage_2",
-    "include/pomdp_interface"
-  ]
-}
