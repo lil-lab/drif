@@ -3,7 +3,7 @@ Machine learning system for following natural language navigation instructions o
 [<img src="http://www.cs.cornell.edu/~valts/img/corl19_full_demo_video_thumbnail.png" alt="drawing" width="800"/>](https://www.youtube.com/watch?v=O7G0HYGqU4w)
 
 Video visualizing all internal representations, including the semantic map, grounding map, and visitation distributions, is available here:
-[<img src="http://www.cs.cornell.edu/~valts/img/corl19_demo_video_thumbnail.png" alt="drawing" width="600"/>](https://www.youtube.com/watch?v=hbeU64UX3CM)
+[<img src="http://www.cs.cornell.edu/~valts/img/corl19_repr_video_thumbnail.png" alt="drawing" width="600"/>](https://www.youtube.com/watch?v=d5rbCEcm4os)
 
 For full details of how the system works, please refer to the [paper](http://www.cs.cornell.edu/~valts/docs/blukis_corl19.pdf).
 
