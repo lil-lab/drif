@@ -1,4 +1,7 @@
 # Dynamic Robot Instruction Following
+### Coming soon! (or contact us now).
+Sim-only implementation is available in branch corl2018.
+
 Machine learning system for following natural language navigation instructions on a real quadcopter. Demo video explaining the system capabilities and structure is avaiable here:
 
 [<img src="http://www.cs.cornell.edu/~valts/img/corl19_full_demo_video_thumbnail.png" alt="drawing" width="800"/>](https://www.youtube.com/watch?v=O7G0HYGqU4w)
@@ -8,8 +11,6 @@ Video visualizing all internal representations, including the semantic map, grou
 [<img src="http://www.cs.cornell.edu/~valts/img/corl19_repr_video_thumbnail.png" alt="drawing" width="600"/>](https://www.youtube.com/watch?v=d5rbCEcm4os)
 
 For full details of how the system works, please refer to the [paper](http://www.cs.cornell.edu/~valts/docs/blukis_corl19.pdf).
-
-**This is the new CoRL 2019 branch for the physical quadcopter implementation with SuReAL. You may switch to the corl2018 branch to access the previous version. Code will be published here soon.**
 
 ### Intro
 This is the code repository for the paper:
