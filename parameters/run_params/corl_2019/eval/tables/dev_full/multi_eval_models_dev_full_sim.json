@@ -1,0 +1,30 @@
+{
+  "MultipleEval": {
+    "run_name": "models_dev_full_sim",
+    "one_at_a_time": false,
+    "SetupOverlay":{
+      "real_drone": false
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_pvn2_sureal_dev_full",
+        "param_file": "corl_2019/eval/tables/dev_full/eval_pvn2_sureal_dev_full_sim"
+      },
+
+      {
+        "param_namespace": "eval_pvn2_sureal_noexp_dev_full",
+        "param_file": "corl_2019/eval/tables/dev_full/eval_pvn2_sureal_noexp_dev_full_sim"
+      },
+      {
+        "param_namespace": "eval_pvn2_sureal_noinstr_dev_full",
+        "param_file": "corl_2019/eval/tables/dev_full/eval_pvn2_sureal_noinstr_dev_full_sim"
+      }
+    ],
+    "Excl": [
+      {
+        "param_namespace": "eval_pvn2_sureal_simonly_dev_full",
+        "param_file": "corl_2019/eval/tables/dev_full/eval_pvn2_sureal_simonly_dev_full_sim"
+      }
+    ]
+  }
+}

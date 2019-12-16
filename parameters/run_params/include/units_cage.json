@@ -1,0 +1,15 @@
+{
+  "Units":
+  {
+    "config_origin": [0.0, 0.0, 0.0],
+    "config_scale": [1.0, -1.0, -1.0],
+    "config_size": [1000.0, 1000.0, 1000.0],
+
+    "env_origin": [0.0, 470.0, 0.0],
+    "env_size": [470.0, 470.0, 470.0],
+    "scale": 1.0,
+
+    "passing_distance": 0.47,
+    "landmark_region_distance": 0.94
+  }
+}

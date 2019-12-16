@@ -1,0 +1,12 @@
+{
+  "Environment":
+  {
+    "airsim_settings_path": "~/Documents/AirSim/settings.json",
+    "simulator_path": "~/shelf_space/droning/unreal_project/DroneSimLab/LinuxNoEditor/MyProject5.sh",
+    "sim_config_dir": "/home/clic/unreal_config/",
+    "config_dir": "/home/clic/BigStore/drif_workspace_corl2019",
+    "templates": false,
+    "annotation_set": "7000",
+    "headless": false
+  }
+}

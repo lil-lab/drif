@@ -1,0 +1,24 @@
+{
+  "@include": [
+    "corl_2019/eval/eval_includes",
+    "corl_2019/pvn_overlay",
+    "corl_2019/eval/eval_overlay"
+  ],
+
+  "Setup":
+  {
+    "run_name": "eval_pvn_original_sureal",
+    "model": "pvn_full_bidomain",
+    "model_file": "TODO: model from sureal_train_pvn_original_bidomain_aug1-2"
+  },
+  "ModelPVN": {
+    "Stage1": {
+      "perturb_maps": false,
+      "plan_every_n_steps": 1
+    }
+  },
+  "PVNWrapper":
+  {
+    "learning_mode": "reinforcement_learning"
+  }
+}

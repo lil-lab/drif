@@ -1,0 +1,15 @@
+{
+  "@include":[
+    "corl_2019/eval/systems/eval_pvn2_rail",
+    "corl_2019/eval/datasplits/dev_small",
+    "corl_2019/eval/eval_real_overlay"
+  ],
+  "Setup":
+  {
+    "run_name": "pvn_bidomain_demo",
+    "max_envs": -1,
+    "num_workers": 1,
+    "real_drone": true,
+    "compute_results_no_rollout": false
+  }
+}

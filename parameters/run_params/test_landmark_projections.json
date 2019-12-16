@@ -1,0 +1,23 @@
+{
+  "@include": [
+    "rss/rss_sup_gsmn_cage_bidomain"
+  ],
+  "Setup":
+  {
+    "run_name": "test_landmark_projections",
+
+    "model": "gsmn_bidomain",
+    "model_file": "",
+
+    "real_drone": true,
+    "passive_mode": true,
+    "trajectory_length": 10000,
+    "num_workers": 1,
+    "max_envs": 100
+  },
+  "Data":
+  {
+    "collect_n_at_a_time": 5,
+    "dataset_name": "real"
+  }
+}

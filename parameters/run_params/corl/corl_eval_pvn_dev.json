@@ -1,0 +1,51 @@
+{
+  "@include": [
+    "corl/corl_eval_pvn_base"
+  ],
+  "Setup":
+  {
+    "model": "pvn_full",
+    "run_name": "evaluate_corl_pvn_dev",
+    "model_file": "dagger_pvn_full_finetune_corl_pvn_stage2",
+    "model_file__": "dagger_pvn_full_finetune_corl_pvn_stage2",
+    "model_file_": "corl/full2/supervised_sm_traj_nav_ratio_path_sup_full2_path_clean_epoch_1",
+    "eval_env_set": "dev",
+    "num_workers": 1,
+    "cuda": true,
+    "max_envs": -1,
+    "write_summaries": true
+  },
+  "Rollout":
+  {
+    "oracle_type": "BasicCarrotPlanner"
+  },
+  "ModelPVN":
+  {
+    "train_action_only": true,
+    "train_action_from_dstar": true,
+    "run_action_from_dstar": false,
+    "action_in_path_only": false,
+    "action_recurrence": false,
+    "perturb_maps": false,
+    "run_auxiliaries": false,
+    "compute_prior": false,
+    "use_prior_only": false,
+
+    "load_action_policy": false,
+    "action_policy_file": "corl/action_gtr/map_to_action_dag_action_gtr_dag99",
+
+    "aux":{
+      "class_map": true,
+      "grounding_map": true,
+      "lang": true,
+      "path": true,
+      "regularize_map": false
+    }
+  },
+  "Simulator":
+  {
+    "window_x": 320,
+    "window_y": 240,
+    "flight_height": 100
+  }
+}

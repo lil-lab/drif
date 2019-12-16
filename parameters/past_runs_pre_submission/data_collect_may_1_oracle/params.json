@@ -1,0 +1,195 @@
+{
+    "Global": {
+        "AirSim": {
+            "SettingdVersion": 1.0,
+            "ClockSpeed": 6.0,
+            "SimpleFlight": {
+                "FirmwareName": "SimpleFlight",
+                "RemoteControlID": 0,
+                "RC": {
+                    "AllowAPIWhenDisconnected": true,
+                    "AllowAPIAlways": true
+                },
+                "ApiServerPort": 10000
+            },
+            "CaptureSettings": [
+                {
+                    "ImageType": 0,
+                    "Width": 128,
+                    "Height": 96,
+                    "FOV_Degrees": 84,
+                    "AutoExposureSpeed": 1,
+                    "AutoExposureBias": 0.5,
+                    "AutoExposureMaxBrightness": 0.97,
+                    "AutoExposureMinBrightness": 0.03,
+                    "TargetGamma": 2.5
+                }
+            ]
+        },
+        "Setup": {
+            "model": "oracle",
+            "model_file": "",
+            "run_name": "data_collect_may_1_oracle",
+            "num_workers": 4,
+            "first_worker": 0,
+            "max_envs": -1,
+            "env_range_start": 0,
+            "env_range_end": -1,
+            "cuda": true,
+            "eval_env_set": "dev",
+            "eval_landmark_side": true,
+            "eval_nl": true,
+            "eval_pretrain": true,
+            "restore_weights_name": "",
+            "fix_restored_weights": false,
+            "debug": false,
+            "trajectory_length": 220,
+            "write_summaries": true,
+            "prune_ambiguous": false,
+            "passive_mode": false,
+            "real_drone": false,
+            "world_size_m": 4.7,
+            "min_augment_len": 1,
+            "augment_len": 1
+        },
+        "BasicCarrotPlanner": {
+            "vel_x": 1.0,
+            "min_vel_x": 0.3,
+            "k_yaw": 1.0,
+            "lookahead_dst": 1.0,
+            "accelerate_steps": 3,
+            "end_dst": 0.4,
+            "stop_dst": 0.2,
+            "decelerate_for_turns": true
+        },
+        "SimpleCarrotPlanner": {
+            "vel_x": 1.0,
+            "min_vel_x": 0.1,
+            "k_yaw": 0.5,
+            "k_offset": 0.1,
+            "lookahead": 12,
+            "accelerate_steps": 3
+        },
+        "PomdpInterface": {
+            "scale": 1.0,
+            "step_interval": 0.5,
+            "randomize_init_pos": false,
+            "init_pos_variance": 0.0,
+            "init_yaw_variance": 0.3,
+            "flight_height": 0.7,
+            "voice": false,
+            "max_horizon": 50
+        },
+        "Dynamics": {
+            "max_vel_x": 0.7,
+            "max_vel_theta": 1.0
+        },
+        "Units": {
+            "config_origin": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "config_scale": [
+                1.0,
+                -1.0,
+                -1.0
+            ],
+            "config_size": [
+                1000.0,
+                1000.0,
+                1000.0
+            ],
+            "env_origin": [
+                0.0,
+                470.0,
+                0.0
+            ],
+            "env_size": [
+                470.0,
+                470.0,
+                470.0
+            ],
+            "scale": 1.0,
+            "passing_distance": 0.47,
+            "landmark_region_distance": 0.94
+        },
+        "Training": {
+            "batch_size": 1,
+            "num_loaders": 8,
+            "lr": 0.001,
+            "weight_decay": 1e-07,
+            "optimizer": "adam"
+        },
+        "Dagger": {
+            "epochs_per_iteration": 1,
+            "epochs_per_iteration_override": {},
+            "max_iterations": 150,
+            "num_test_samples": 100,
+            "max_envs_dag": 5000,
+            "max_envs_sup": 1000,
+            "train_envs_per_iteration_override": {},
+            "train_envs_per_iteration": 24,
+            "test_envs_per_iteration": 6,
+            "oracle_discount_factor": 0.92,
+            "retrain_every_iteration": false,
+            "optimizer": "adam",
+            "max_deviation": 150,
+            "max_samples_in_memory": 500,
+            "resample_supervised_data": false,
+            "segment_level": true,
+            "test_on_train": false,
+            "restore_latest": false,
+            "restore": 0,
+            "restore_data_only": false
+        },
+        "Supervised": {
+            "num_epochs": 20,
+            "start_epoch": 0,
+            "split_train_data": false,
+            "train_data_split": "data_a"
+        },
+        "SplitEnvs": {
+            "names": [
+                "data_a",
+                "data_b"
+            ],
+            "fractions": [
+                0.8,
+                0.2
+            ]
+        },
+        "DroneController": {
+            "start_height_offset": 0
+        },
+        "Environment": {
+            "airsim_settings_path": "~/Documents/AirSim/settings.json",
+            "simulator_path": "~/shelf_space/droning/unreal_project/DroneSimLab/LinuxNoEditor/MyProject5.sh",
+            "sim_config_dir": "/home/clic/unreal_config/",
+            "config_dir": "/home/clic/shelf_space/cage_workspaces/unreal_config_nl_cage_rss2020",
+            "templates": false,
+            "annotation_set": "7000",
+            "headless": false
+        },
+        "@include": [
+            "airsim/settings_cage",
+            "include/setup_base",
+            "include/basic_carrot_planner",
+            "include/simple_carrot_planner",
+            "include/pomdp_interface",
+            "include/dynamics_cage",
+            "include/units_cage",
+            "include/training/training",
+            "include/training/dagger",
+            "include/training/supervised",
+            "include/airsim_drone_controller_cage",
+            "environments/rss2020"
+        ],
+        "Rollout": {
+            "oracle_type": "SimpleCarrotPlanner"
+        },
+        "Data": {
+            "dataset_name": "simulator"
+        }
+    }
+}

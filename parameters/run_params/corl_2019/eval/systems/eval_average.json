@@ -1,0 +1,13 @@
+{
+  "@include": [
+    "corl_2019/eval/eval_includes",
+    "corl_2019/eval/eval_overlay"
+  ],
+
+  "Setup":
+  {
+    "run_name": "eval_average",
+    "model": "average",
+    "model_file": false
+  }
+}

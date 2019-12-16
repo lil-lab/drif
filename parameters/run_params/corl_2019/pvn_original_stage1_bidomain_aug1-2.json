@@ -1,0 +1,26 @@
+{
+  "@include": [
+    "corl_2019/corl_2019_overlay",
+    "corl_2019/bidomain_train_overlay",
+    "corl_2019/pvn_overlay"
+  ],
+  "Setup":
+  {
+    "model": "pvn_original_stage1_bidomain",
+    "critic_model": "pvn_stage1_critic",
+
+    "run_name": "pvn_original_stage1_aug1-2",
+    "num_workers": 1,
+    "augment_len": 2,
+    "min_augment_len": 1,
+    "trajectory_length": 35
+  },
+  "Supervised": {
+    "num_epochs": 25
+  },
+  "Training":
+  {
+    "real_dataset_names": ["real"],
+    "sim_dataset_names": ["simulator_basic"]
+  }
+}

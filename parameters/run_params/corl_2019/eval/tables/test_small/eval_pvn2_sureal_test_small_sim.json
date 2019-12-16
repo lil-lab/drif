@@ -1,0 +1,10 @@
+{
+  "@include":[
+    "corl_2019/eval/systems/eval_pvn2_sureal",
+    "corl_2019/eval/datasplits/test_small"
+  ],
+  "Setup":{
+    "run_name": "eval_pvn2_sureal_test_small_sim",
+    "real_drone": false
+  }
+}

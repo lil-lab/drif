@@ -1,0 +1,29 @@
+{
+  "MultipleEval": {
+    "run_name": "models_test_full_sim",
+    "one_at_a_time": false,
+    "SetupOverlay":{
+      "real_drone": false
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_pvn_original_bc_test_full",
+        "param_file": "corl_2019/eval/tables/test_full/eval_pvn_original_bc_test_full_sim"
+      },
+      {
+        "param_namespace": "eval_pvn2_sureal_test_full",
+        "param_file": "corl_2019/eval/tables/test_full/eval_pvn2_sureal_test_full_sim"
+      },
+      {
+        "param_namespace": "eval_pvn2_bc_test_full",
+        "param_file": "corl_2019/eval/tables/test_full/eval_pvn2_bc_test_full_sim"
+      }
+    ],
+    "ExclParams": [
+      {
+        "param_namespace": "eval_pvn2_rl_test_full",
+        "param_file": "corl_2019/eval/tables/test_full/eval_pvn2_rl_test_full_sim"
+      }
+    ]
+  }
+}

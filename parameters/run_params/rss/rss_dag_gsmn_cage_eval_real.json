@@ -1,0 +1,44 @@
+{
+  "@include": [
+    "rss_sup_gsmn_cage"
+  ],
+  "Setup":
+  {
+    "model": "gsmn_cage",
+    "model_file": "dagger_gsmn_cage_gsmn_dag_pretrained_features_b",
+    "run_name": "eval_gsmn_dag_pretrained_features_b",
+    "num_workers": 1,
+    "cuda": true,
+    "max_envs": 3,
+    "eval_nl": false,
+    "eval_landmark_side": true,
+    "real_drone": true,
+    "world_size_m": 4.7
+  },
+  "AirSim":
+  {
+    "ClockSpeed": 1.0
+  },
+  "Rollout":
+  {
+    "oracle_type": "SimpleCarrotPlanner"
+  },
+  "Model":
+  {
+    "load_feature_net": true,
+    "feature_net_filename": "pretrain_resnet_e",
+    "feature_net_tensor_name": "model_real.img_to_features",
+    "freeze_feature_net": true,
+    "rviz": true,
+    "write_figures": true
+  },
+  "Data":
+  {
+    "dataset_name": "simulator"
+  },
+  "PomdpInterface":
+  {
+    "flight_height": 0.7,
+    "voice": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "@include": [
+    "environments/cage_nl_augmented",
+    "include/setup_base",
+    "include/units_cage",
+    "include/pomdp_interface",
+    "include/airsim_drone_controller_cage",
+    "airsim/settings_cage_cv"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "@include": [
+    "rss_sup_gsmn_cage_bidomain"
+  ],
+  "Setup":
+  {
+    "model": "gsmn_bidomain",
+    "real_model_file": "supervised_gsmn_bidomain_gsmn_sup_bidomain_11_freg_wo_wloss_real",
+    "sim_model_file": "supervised_gsmn_bidomain_gsmn_sup_bidomain_11_freg_wo_wloss_sim",
+    "critic_model": "gsmn_critic",
+    "critic_model_file": "supervised_gsmn_critic_gsmn_sup_bidomain_11_freg_wo_wloss_critic",
+
+    "run_name": "gsmn_dag_bidomain_11_b",
+    "num_workers": 0,
+    "real_drone": false,
+    "max_envs": -1
+  },
+  "Model":
+  {
+    "map_to_act_channels": 5
+  },
+  "Training":
+  {
+    "critic_warmup_steps": 10,
+    "critic_warmup_iterations": 10,
+    "critic_steps": 4,
+    "model_steps": 1,
+    "critic_batch_size": 1,
+    "model_batch_size": 1,
+
+    "disable_wloss": true,
+    "disable_domain_weight_sharing": false,
+    "weight_decay": 1e-8,
+    "optimizer": "adam",
+    "lr": 0.00001
+  },
+  "Supervised": {
+    "num_epochs": 100
+  }
+}

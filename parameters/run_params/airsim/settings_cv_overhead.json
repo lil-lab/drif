@@ -1,0 +1,37 @@
+{
+  "AirSim":
+  {
+  "SettingdVersion": 10.0,
+  "UsageScenario": "ComputerVision",
+  "ClockSpeed": 1.0,
+
+  "SimpleFlight": {
+    "FirmwareName": "SimpleFlight",
+    "RemoteControlID": 0,
+    "RC": {
+      "AllowAPIWhenDisconnected": true,
+      "AllowAPIAlways": true
+    },
+    "ApiServerPort": 10000
+   },
+  "CaptureSettings": [
+    {
+      "ImageType": 0,
+      "Width": 512,
+      "Height": 512,
+      "FOV_Degrees": 60,
+      "AutoExposureSpeed": 100,
+      "AutoExposureBias": 0.5,
+      "AutoExposureMaxBrightness": 2.0,
+      "AutoExposureMinBrightness": 0.5
+    },
+    {
+      "ImageType": 2,
+      "Width": 512,
+      "Height": 512,
+      "FOV_Degrees": 60,
+      "AutoExposureSpeed": 1
+    }
+  ]
+  }
+}

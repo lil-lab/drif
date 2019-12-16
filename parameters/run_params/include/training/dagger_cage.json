@@ -1,0 +1,24 @@
+{
+  "Dagger": {
+    "epochs_per_iteration": 1,
+    "epochs_per_iteration_override": {},
+    "max_iterations": 150,
+    "num_test_samples": 100,
+    "max_envs_dag": 5000,
+    "max_envs_sup": 1000,
+    "train_envs_per_iteration_override": {},
+    "train_envs_per_iteration": 5,
+    "test_envs_per_iteration": 2,
+    "oracle_discount_factor": 0.92,
+    "retrain_every_iteration": false,
+    "optimizer": "adam",
+    "max_deviation": 150,
+    "max_samples_in_memory": 500,
+    "resample_supervised_data": false,
+    "segment_level": true,
+    "test_on_train": false,
+    "restore_latest": false,
+    "restore": 0,
+    "restore_data_only": false
+  }
+}

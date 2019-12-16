@@ -1,0 +1,24 @@
+{
+  "@include": [
+    "corl_2019/eval/eval_includes",
+    "corl_2019/pvn2_overlay",
+    "corl_2019/eval/eval_overlay"
+  ],
+
+  "Setup":
+  {
+    "run_name": "eval_pvn2_sureal_simonly",
+    "model": "pvn_full_bidomain",
+    "model_file": "sureal/pvn2-sureal-simonly/sureal_pvn2_bidomain_aug1-2_simonly_full_RL_epoch_399"
+  },
+  "ModelPVN": {
+    "Stage1": {
+      "perturb_maps": false,
+      "plan_every_n_steps": 1
+    }
+  },
+  "PVNWrapper":
+  {
+    "learning_mode": "reinforcement_learning"
+  }
+}

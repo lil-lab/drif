@@ -1,0 +1,7 @@
+{
+  "Dynamics":
+  {
+    "max_vel_x": 0.7,
+    "max_vel_theta": 1.0
+  }
+}

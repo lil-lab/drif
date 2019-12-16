@@ -1,0 +1,13 @@
+{
+  "Supervised": {
+    "num_epochs": 20,
+    "start_epoch": 0,
+    "split_train_data": false,
+    "train_data_split": "data_a"
+  },
+  "SplitEnvs":
+  {
+     "names": ["data_a", "data_b"],
+     "fractions": [0.8, 0.2]
+  }
+}

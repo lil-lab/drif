@@ -1,0 +1,385 @@
+{
+    "eval_pvn2_rail_noinstr_dev_small": {
+        "Environment": {
+            "airsim_settings_path": "~/Documents/AirSim/settings.json",
+            "simulator_path": "~/shelf_space/droning/unreal_project/DroneSimLab/LinuxNoEditor/MyProject5.sh",
+            "sim_config_dir": "/home/clic/unreal_config/",
+            "config_dir": "/home/clic/shelf_space/cage_workspaces/unreal_config_nl_cage_augmented",
+            "templates": false,
+            "annotation_set": "7000",
+            "augment_len": 2,
+            "min_augment_len": 2,
+            "headless": false
+        },
+        "AirSim": {
+            "SettingdVersion": 1.0,
+            "ClockSpeed": 4.0,
+            "SimpleFlight": {
+                "FirmwareName": "SimpleFlight",
+                "RemoteControlID": 0,
+                "RC": {
+                    "AllowAPIWhenDisconnected": true,
+                    "AllowAPIAlways": true
+                },
+                "ApiServerPort": 10000
+            },
+            "CaptureSettings": [
+                {
+                    "ImageType": 0,
+                    "Width": 128,
+                    "Height": 96,
+                    "FOV_Degrees": 84,
+                    "AutoExposureSpeed": 1,
+                    "AutoExposureBias": 0.5,
+                    "AutoExposureMaxBrightness": 0.97,
+                    "AutoExposureMinBrightness": 0.03,
+                    "TargetGamma": 2.5
+                }
+            ]
+        },
+        "Setup": {
+            "model": "pvn_full_bidomain",
+            "model_file": false,
+            "run_name": "eval_pvn2_rail_blind_dev_small_sim",
+            "num_workers": 1,
+            "first_worker": 0,
+            "max_envs": -1,
+            "env_range_start": 6000,
+            "env_range_end": 7000,
+            "cuda": true,
+            "eval_env_set": "dev",
+            "eval_landmark_side": false,
+            "eval_nl": true,
+            "eval_pretrain": true,
+            "restore_weights_name": "",
+            "fix_restored_weights": false,
+            "debug": false,
+            "trajectory_length": 50,
+            "write_summaries": true,
+            "prune_ambiguous": false,
+            "passive_mode": false,
+            "real_model_file": false,
+            "sim_model_file": false,
+            "critic_model_file": false,
+            "world_size_m": 4.7,
+            "augment_len": 2,
+            "min_augment_len": 1,
+            "use_rviz": false,
+            "only_specific_envs": [
+                6168,
+                6169,
+                6191,
+                6192,
+                6296,
+                6299,
+                6415,
+                6419,
+                6567,
+                6569,
+                6632,
+                6634,
+                6825,
+                6827,
+                6856,
+                6857,
+                6876,
+                6878,
+                6917,
+                6919
+            ],
+            "real_drone": false
+        },
+        "BasicCarrotPlanner": {
+            "vel_x": 1.0,
+            "min_vel_x": 0.3,
+            "k_yaw": 1.0,
+            "lookahead_dst": 0.7,
+            "accelerate_steps": 3,
+            "end_dst": 0.7,
+            "stop_dst": 0.25,
+            "decelerate_for_turns": true
+        },
+        "PomdpInterface": {
+            "scale": 1.0,
+            "step_interval": 0.5,
+            "randomize_init_pos": false,
+            "init_pos_variance": 20.0,
+            "init_yaw_variance": 0.5,
+            "flight_height": 0.7,
+            "voice": false,
+            "max_horizon": 50
+        },
+        "Dynamics": {
+            "max_vel_x": 0.7,
+            "max_vel_theta": 1.0
+        },
+        "Units": {
+            "config_origin": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "config_scale": [
+                1.0,
+                -1.0,
+                -1.0
+            ],
+            "config_size": [
+                1000.0,
+                1000.0,
+                1000.0
+            ],
+            "env_origin": [
+                0.0,
+                470.0,
+                0.0
+            ],
+            "env_size": [
+                470.0,
+                470.0,
+                470.0
+            ],
+            "scale": 1.0,
+            "passing_distance": 0.47,
+            "landmark_region_distance": 0.94
+        },
+        "ModelPVN": {
+            "Stage1": {
+                "vocab_size": 2200,
+                "num_landmarks": 64,
+                "emb_size": 50,
+                "emb_layers": 1,
+                "emb_dropout": 0.5,
+                "word_emb_size": 50,
+                "mlp_hidden": 32,
+                "resnet_channels": 32,
+                "feature_channels": 32,
+                "relevance_channels": 3,
+                "pathpred_in_channels": 35,
+                "global_map_size": 32,
+                "local_map_size": 64,
+                "world_size_px": 32,
+                "world_size_m": 4.7,
+                "img_w": 128,
+                "img_h": 72,
+                "cam_h_fov": 84,
+                "plan_every_n_steps": 1,
+                "predict_confidence": false,
+                "clear_history": true,
+                "run_action_from_dstar": false,
+                "perturb_maps": false,
+                "pos_variance": 0.0,
+                "rot_variance": 1.0,
+                "predict_in_start_frame": true,
+                "path_loss_function": "crossentropy",
+                "run_auxiliaries": true,
+                "write_figures": false,
+                "write_gifs": false,
+                "compute_prior": false,
+                "use_prior_only": false,
+                "clip_observability": true,
+                "blind": true,
+                "lingunet_corl_": {
+                    "in_channels": 32,
+                    "in_channels_": "@../feature_channels",
+                    "out_channels": 2,
+                    "embedding_size": 30,
+                    "embedding_size_": "@../emb_size",
+                    "upscale_conv": false,
+                    "hc1": 48,
+                    "hb1": 24,
+                    "hc2": 256,
+                    "stride": 2,
+                    "split_embedding": false
+                },
+                "lingunet": {
+                    "in_channels": 32,
+                    "in_channels_": "@../feature_channels",
+                    "out_channels": 2,
+                    "embedding_size": 50,
+                    "embedding_size_": "@../emb_size",
+                    "hc1": 48,
+                    "hb1": 24,
+                    "hc2": 256,
+                    "stride": 2,
+                    "split_embedding": false,
+                    "small_network": false,
+                    "upscale_conv": true,
+                    "double_up": true
+                },
+                "weight_override": true,
+                "cover_init_pos": true,
+                "ignore_instruction": false
+            },
+            "Stage2": {
+                "stop_threshold": 0.08,
+                "test_time_amplifier": 2.0,
+                "map_to_act_channels": 2,
+                "crop_size": 16,
+                "action_in_path_only": false,
+                "action_recurrence": false,
+                "map_structure_channels": 2,
+                "use_map_boundary": true,
+                "add_vdist_to_mapinfo": false
+            },
+            "ActorCritic": {
+                "h1": 4,
+                "h2": 32,
+                "structure_h1": 4,
+                "obs_dim": 16
+            },
+            "UseAux": {
+                "class_features": false,
+                "grounding_features": false,
+                "class_map": true,
+                "grounding_map": true,
+                "goal_map": false,
+                "lang": true,
+                "regularize_map": true
+            },
+            "AuxWeights": {
+                "class_features": 1.0,
+                "grounding_features": 1.0,
+                "class_map": 1.0,
+                "grounding_map": 1.0,
+                "lang": 1.0,
+                "visitation_dist": 1.0,
+                "regularize_map": 1.0,
+                "visitation_confidence": 1.0
+            },
+            "AuxWeightsRealOverride": {
+                "visitation_dist": 0.05,
+                "lang": 0.05
+            }
+        },
+        "Data": {
+            "noisy_pos_variance": 0,
+            "noisy_rot_variance": 0,
+            "img_w": 128,
+            "img_h": 96,
+            "min_seg_len": 1,
+            "cache": false
+        },
+        "ModelCritic": {
+            "feature_channels": 32,
+            "critic_channels": 8,
+            "grad_penalty_weight": 0,
+            "clip_value": 0.01
+        },
+        "DroneController": {
+            "start_height_offset": 0
+        },
+        "SimpleCarrotPlanner": {
+            "vel_x": 1.0,
+            "min_vel_x": 0.1,
+            "k_yaw": 0.5,
+            "k_offset": 0.1,
+            "lookahead": 12,
+            "accelerate_steps": 3
+        },
+        "Training": {
+            "batch_size": 1,
+            "num_loaders": 8,
+            "lr": 0.001,
+            "weight_decay": 1e-07,
+            "optimizer": "adam"
+        },
+        "Dagger": {
+            "epochs_per_iteration": 1,
+            "epochs_per_iteration_override": {},
+            "max_iterations": 150,
+            "num_test_samples": 100,
+            "max_envs_dag": 5000,
+            "max_envs_sup": 1000,
+            "train_envs_per_iteration_override": {},
+            "train_envs_per_iteration": 5,
+            "test_envs_per_iteration": 2,
+            "oracle_discount_factor": 0.92,
+            "retrain_every_iteration": false,
+            "optimizer": "adam",
+            "max_deviation": 150,
+            "max_samples_in_memory": 500,
+            "resample_supervised_data": false,
+            "segment_level": true,
+            "test_on_train": false,
+            "restore_latest": false,
+            "restore": 0,
+            "restore_data_only": false
+        },
+        "Supervised": {
+            "num_epochs": 20,
+            "start_epoch": 0,
+            "split_train_data": false,
+            "train_data_split": "data_a"
+        },
+        "SplitEnvs": {
+            "names": [
+                "data_a",
+                "data_b"
+            ],
+            "fractions": [
+                0.8,
+                0.2
+            ]
+        },
+        "BaselineAverage": {
+            "AvgSpeed": 0.55,
+            "AvgYawrate": 0.008,
+            "AvgSteps": 21
+        },
+        "@include": [
+            "corl_2019/eval/systems/eval_pvn2_rail_blind",
+            "corl_2019/eval/datasplits/dev_small"
+        ],
+        "Rollout": {
+            "oracle_type": "BasicCarrotPlanner"
+        },
+        "BasicCarrotPlannerRoll": {
+            "vel_x": 1.5,
+            "min_vel_x": 0.3,
+            "k_yaw": 1.0,
+            "lookahead_dst": 0.5,
+            "accelerate_steps": 3,
+            "end_dst": 0.5,
+            "stop_dst": 0.14,
+            "decelerate_for_turns": true
+        },
+        "RLSUP": {
+            "sim_seed_dataset": "simulator_basic",
+            "real_seed_dataset": "real"
+        },
+        "Camcorder1": {
+            "video_devices": [
+                "/dev/video1",
+                "/dev/video2"
+            ],
+            "video_names": [
+                "ceiling",
+                "corner"
+            ],
+            "options": [
+                "-video_size 1920x1080 -filter:v 'crop=960:960:480:50'",
+                "-video_size 1920x1080 -vcodec libx264 -crf 27"
+            ],
+            "discard_output": true
+        },
+        "PVNWrapper": {
+            "learning_mode": "reinforcement_learning",
+            "pvn_version": "v2",
+            "stage1_file": false,
+            "stage2_file": "rail/pvn2-rail-blind/rail_pvn2_bidomain_aug1-2_blind_stage2_RL_epoch_399",
+            "wasserstein_reward": true,
+            "wd_reward": {
+                "stop_alpha": 0.5,
+                "stop_p_alpha": 0.0,
+                "visit_alpha": 0.3,
+                "exploration_alpha": 1.0,
+                "stop_oob_alpha": 3.0,
+                "step_alpha": 0.04
+            },
+            "explore_reward_only": false,
+            "stage1_file_sim": "rail/pvn2-rail-blind/rail_pvn2_bidomain_aug1-2_blind_SUP_stage1_sim_214",
+            "stage1_file_real": "rail/pvn2-rail-blind/rail_pvn2_bidomain_aug1-2_blind_SUP_stage1_real_214"
+        }
+    }
+}

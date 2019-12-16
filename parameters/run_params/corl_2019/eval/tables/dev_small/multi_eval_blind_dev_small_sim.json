@@ -1,0 +1,15 @@
+{
+  "MultipleEval": {
+    "run_name": "models_dev_small_sim",
+    "one_at_a_time": false,
+    "SetupOverlay":{
+      "real_drone": false
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_pvn2_sureal_noinstr_dev_small",
+        "param_file": "corl_2019/eval/tables/dev_small/eval_pvn2_sureal_blind_dev_small_sim"
+      }
+    ]
+  }
+}
