@@ -113,6 +113,6 @@ Here's an example of how to run an evaluation for a single model in simulation:
 
 `python mains/eval/evaluate.py corl_2019/eval/tables/dev_small/eval_pvn2_sureal_dev_small_sim`
 
-To evaluate your ow model, make a copy of parameters/corl_2019/eval/tables/dev_small/eval_pvn2_sureal_dev_small_sim.json,
+To evaluate your own model, make a copy of parameters/corl_2019/eval/tables/dev_small/eval_pvn2_sureal_dev_small_sim.json,
 change the model weight paths to point to your trained model weights, and run mains/eval/evaluate.py with your modified parameters.
 
