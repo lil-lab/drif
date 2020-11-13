@@ -1,9 +1,0 @@
-{
-  "Dynamics":
-  {
-    "max_vel_x_o": 160,
-    "max_vel_theta_o": 140,
-    "max_vel_x": 4.8,
-    "max_vel_theta": 2.44
-  }
-}

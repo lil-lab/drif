@@ -1,6 +1,0 @@
-{
-  "@include":[
-    "corl_2019/eval/systems/eval_average",
-    "corl_2019/eval/datasplits/test_realset"
-  ]
-}

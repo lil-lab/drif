@@ -1,8 +1,0 @@
-{
-  "ModelCritic": {
-    "feature_channels": 32,
-    "critic_channels": 8,
-    "grad_penalty_weight": 0,
-    "clip_value": 0.01
-  }
-}
