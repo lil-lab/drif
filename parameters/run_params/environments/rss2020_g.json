@@ -1,0 +1,12 @@
+{
+  "Environment":
+  {
+    "airsim_settings_path": "/home/vb295/Documents/AirSim/settings.json",
+    "simulator_path": "/home/vb295/unreal_project/DroneSimLabUnseen/LinuxNoEditor/MyProject5.sh",
+    "sim_config_dir": "/home/vb295/unreal_config/",
+    "config_dir": "/home/vb295/unreal_config_nl_cage_rss2020",
+    "grounding_data_dir": "/home/vb295/grounding_data_rss2020",
+    "templates": false,
+    "headless": true
+  }
+}

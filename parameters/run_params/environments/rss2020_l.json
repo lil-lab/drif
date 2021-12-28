@@ -1,0 +1,12 @@
+{
+  "Environment":
+  {
+    "airsim_settings_path": "~/Documents/AirSim/settings.json",
+    "simulator_path": "~/DroneSimLabUnseen/LinuxNoEditor/MyProject5.sh",
+    "sim_config_dir": "/home/valts/unreal_config/",
+    "config_dir": "/home/valts/unreal_config_nl_cage_rss2020",
+    "grounding_data_dir": "/home/valts/grounding_data_rss2020",
+    "templates": false,
+    "headless": false
+  }
+}

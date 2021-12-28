@@ -1,0 +1,96 @@
+{
+  "@include": [
+    "environments/cage_nl_augmented",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/models/pvn_cage_bidomain",
+    "include/models/pvn_critic",
+    "include/airsim_drone_controller_cage",
+
+    "corl_2019/corl_2019_overlay",
+    "corl_2019/pvn2_overlay",
+    "corl_2019/bidomain_train_overlay",
+    "corl_2019/rail_overlay"
+  ],
+  "RLSUP":{
+    "sim_seed_dataset": "simulator_basic",
+    "real_seed_dataset": "real"
+  },
+  "Setup":
+  {
+    "run_name": "rail_pvn2_bidomain_aug1-2",
+    "model": null,
+    "rl_model": "pvn_full_bidomain",
+    "sup_model": "pvn_stage1_bidomain",
+    "sup_critic_model": "pvn_stage1_critic",
+
+    "real_model_file": "stage1/aug1-2/supervised_pvn_stage1_bidomain_pvn2_stage1_aug1-2_real_epoch_25",
+    "sim_model_file": "stage1/aug1-2/supervised_pvn_stage1_bidomain_pvn2_stage1_aug1-2_sim_epoch_25",
+    "critic_model_file": "stage1/aug1-2/supervised_pvn_stage1_critic_pvn2_stage1_aug1-2_critic_epoch_25",
+
+    "env_range_start": 0,
+    "env_range_end": 7000,
+    "rl_env_range_start": 0,
+    "rl_env_range_end": 7000,
+    "min_augment_len": 1,
+    "augment_len": 2,
+
+    "num_workers": 1,
+    "cuda": true,
+    "max_envs": -1,
+    "world_size_m": 4.7,
+
+    "sup_trajectory_length": 40,
+    "rl_trajectory_length": 40,
+    "real_drone": false,
+    "eval_landmark_side": false,
+    "eval_nl": false
+  },
+  "Training":
+  {
+    "iterations_per_epoch": 300,
+    "model_common_loaders": 2,
+    "model_sim_loaders": 3,
+    "critic_loaders": 3
+  },
+  "ModelPVN": {
+    "Stage1": {
+      "perturb_maps": false,
+      "plan_every_n_steps": 1,
+      "emb_size": 60,
+      "emb_layers": 1,
+      "word_emb_size": 30,
+      "emb_dropout": 0.5,
+      "weight_override": true,
+      "predict_confidence": false,
+      "clip_observability": true,
+      "cover_init_pos": true,
+      "pathpred_in_channels": 35,
+      "lingunet": {
+        "upscale_conv": true,
+        "double_up": true,
+        "embedding_size": 60
+      }
+    }
+  },
+  "PVNWrapper":
+  {
+  },
+  "AirSim":
+  {
+    "ClockSpeed": 8.0
+  },
+  "Data":
+  {
+    "min_seg_len": 1,
+    "locking": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "@include": [
+    "rss_2020/d_eval_fspvn_sureal_unseen_sim_dbrec",
+    "rss_2020/eval/datasplits/test_small_unseen"
+  ],
+  "Setup": {
+    "run_name": "test_fspvn_SuReAL_unseen_sim-dbrec_hcat_t",
+
+    "env_range_start": 7000,
+    "env_range_end": 7430
+  },
+  "PVNWrapper": {
+    "add_model_state_to_rollout_data": true
+  }
+}

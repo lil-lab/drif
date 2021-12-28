@@ -1,0 +1,13 @@
+{
+  "@include": [
+    "rss_2020/eval/eval_includes",
+    "rss_2020/eval/eval_overlay"
+  ],
+
+  "Setup":
+  {
+    "run_name": "eval_average",
+    "model": "average",
+    "model_file": false
+  }
+}

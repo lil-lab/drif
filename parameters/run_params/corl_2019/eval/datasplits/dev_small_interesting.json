@@ -1,0 +1,11 @@
+{
+  "Setup": {
+    "max_envs": -1,
+    "env_range_start": 6000,
+    "env_range_end": 7000,
+    "only_specific_envs": [6299, 6827],
+    "eval_env_set": "dev",
+    "augment_len": 2,
+    "min_augment_len": 1
+  }
+}

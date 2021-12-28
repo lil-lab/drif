@@ -1,0 +1,23 @@
+{
+  "MultipleEval": {
+    "run_name": "models_test_small_unseen_real",
+    "one_at_a_time": true,
+    "SetupOverlay":{
+      "real_drone": true
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_fspvn_sureal_test_small_unseen",
+        "param_file": "rss_2020/eval/tables/test_small_unseen/eval_fspvn_sureal_test_small_unseen_real"
+      },
+      {
+        "param_namespace": "eval_pvn2_sureal_seendata_test_small_unseen",
+        "param_file": "rss_2020/eval/tables/test_small_unseen/eval_pvn2_sureal_seendata_test_small_unseen_real"
+      },
+      {
+        "param_namespace": "eval_pvn2_sureal_alldata_test_small_unseen",
+        "param_file": "rss_2020/eval/tables/test_small_unseen/eval_pvn2_sureal_alldata_test_small_unseen_real"
+      }
+    ]
+  }
+}

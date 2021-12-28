@@ -1,0 +1,17 @@
+{
+  "ImageEmbedding": {
+      "in_channels": 3,
+      "out_channels": 1,
+      "hc1": 32,
+      "hb1": 8,
+      "filter_out_c": 48,
+      "_hb1_comment": "hb1 must be num_layers * num_attn_heads (5 * 8 = 40)",
+      "hc2": 32,
+      "hc3": 32,
+      "stride": 2,
+      "split_embedding": false,
+      "small_network": false,
+      "upscale_conv": true,
+      "double_up": true
+    }
+}

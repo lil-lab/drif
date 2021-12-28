@@ -1,0 +1,11 @@
+{
+  "@include":[
+    "rss_2020/eval/systems/eval_fspvn",
+    "rss_2020/eval/datasplits/test_small_seen",
+    "rss_2020/eval/eval_real_overlay"
+  ],
+  "Setup":{
+    "run_name": "eval_fspvn_test_small_seen_sim",
+    "real_drone": true
+  }
+}

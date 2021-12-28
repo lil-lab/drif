@@ -1,0 +1,50 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/models/simple_matching_network",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/pvn2_overlay",
+    "rss_2020/bidomain_train_overlay"
+  ],
+  "Setup": {
+    "model": "multi_matching_network",
+    "model_file": "components/supervised_multi_matching_network_train_MULTI_matching_sim_huge_unif_+blr_-grain_-rot_-flip_MAXSIM_l2dist_lesswd_epoch_852",
+    "run_name": "test_comp_MULTI_MAXSIM_l2dist_lesswd_epoch_852",
+    "num_workers": 1,
+    "augment_len": 1,
+    "min_augment_len": 1,
+    "trajectory_length": 1
+  },
+  "Training": {
+    "batch_size": 256,
+    "num_loaders": 2,
+    "lr__": 0.001,
+    "weight_decay": 0.001,
+    "test_epochs": 100
+  },
+  "Data": {
+    "object_matching_training_dataset_dir": "/media/clic/BigStore/grounding_data_both_sim_5_matching/composed/",
+    "_object_matching_test_dataset_dir": "/media/clic/BigStore/grounding_data_both_sim_3_test/composed/",
+    "object_matching_test_dataset_dir": "/media/clic/shelf_space/grounding_data_sim_test_6k+/",
+    "grayscale": false,
+    "hard_negative_mining": false,
+    "blur": true,
+    "noise": false,
+    "rotate": false,
+    "flip": false
+  },
+  "ModelSimpleMatchingNetwork": {
+    "imagenet_features": true
+  }
+}

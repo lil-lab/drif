@@ -1,0 +1,28 @@
+{
+  "@include": [
+    "corl_2019/eval/eval_includes",
+    "corl_2019/pvn2_overlay",
+    "corl_2019/eval/eval_overlay"
+  ],
+
+  "Setup":
+  {
+    "run_name": "eval_pvn2_RAIL_noinstr",
+    "model": "pvn_full_bidomain",
+    "model_file": false
+  },
+  "ModelPVN": {
+    "Stage1": {
+      "perturb_maps": false,
+      "plan_every_n_steps": 1,
+      "ignore_instruction": true
+    }
+  },
+  "PVNWrapper":
+  {
+    "learning_mode": "reinforcement_learning",
+    "stage1_file_sim": "rail/pvn2-rail-noinstr/rail_pvn2_bidomain_aug1-2_noinstr_SUP_stage1_sim",
+    "stage1_file_real": "rail/pvn2-rail-noinstr/rail_pvn2_bidomain_aug1-2_noinstr_SUP_stage1_real",
+    "stage2_file": "rail/pvn2-rail-noinstr/rail_pvn2_bidomain_aug1-2_noinstr_stage2_RL"
+  }
+}

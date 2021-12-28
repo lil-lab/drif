@@ -1,0 +1,58 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/models/object_reference_recognizer",
+    "rss_2020/models/fspvn_cage_bidomain",
+    "rss_2020/models/region_proposal_network",
+    "rss_2020/models/region_refinement_network",
+    "rss_2020/models/simple_matching_network",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/fspvn_overlay",
+    "rss_2020/bidomain_train_overlay"
+  ],
+  "Setup":
+  {
+    "model": "rpn_fspvn_stage1",
+    "model_file": null,
+    "critic_model": null,
+
+    "run_name": "train_rpn_fspvn_aug1-2_real_data6",
+    "num_workers": 1,
+    "augment_len": 2,
+    "min_augment_len": 1,
+    "trajectory_length": 35,
+    "ŗeal_drone": false
+  },
+
+  "Training":
+  {
+    "batch_size": 1,
+    "num_loaders": 8,
+    "lr": 0.001
+  },
+
+  "Data":
+  {
+    "dataset_names": ["simulator_basic_slow"],
+    "object_database_train": "train_sim",
+    "object_database_dev": "in_dev_sim"
+  },
+
+  "ModelFSPVN": {
+    "object_recognizer_model_name": "components/supervised_object_reference_recognizer_train_object_reference_recognizer_2layer_h20_adam_dropout_balanced_epoch_150",
+    "rpn_model_name": "components/pytproc/supervised_region_proposal_network_train_region_proposal_network_X4_rad0.5_noaug_epoch_2",
+    "refinement_model_name": "components/pytproc/supervised_region_refinement_network_train_region_refinement_network_pytproc_2_noaug_epoch_8",
+    "matching_model_name": "components/pytproc/supervised_multi_matching_network_train_MULTI_matching_sim_huge_pytproc_MAXSIM_l2dist_lesswd_absoloss_epoch_999"
+  }
+}

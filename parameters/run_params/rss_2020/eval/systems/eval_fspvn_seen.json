@@ -1,0 +1,13 @@
+{
+  "Setup":
+  {
+    "corpus_name": "7000",
+    "use_wordset_from_corpus": "7000"
+  },
+
+  "Data":
+  {
+    "object_database_real": "object_database_test_real_seen",
+    "object_database_sim": "object_database_test_sim_seen"
+  }
+}

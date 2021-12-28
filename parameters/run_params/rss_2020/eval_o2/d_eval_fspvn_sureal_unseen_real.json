@@ -1,0 +1,67 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "rss_2020/models/object_reference_recognizer",
+    "rss_2020/models/fspvn_cage_bidomain",
+    "rss_2020/models/region_proposal_network",
+    "rss_2020/models/region_refinement_network",
+    "rss_2020/models/simple_matching_network",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/fspvn_overlay",
+    "rss_2020/bidomain_train_overlay",
+    "rss_2020/eval/datasplits/dev_small_unseen"
+  ],
+  "Setup": {
+    "model": "rpn_fspvn_full_bidomain",
+    "model_file": null,
+    "run_name": "eval_fspvn_SuReAL_unseen_real_dt2",
+    "num_workers": 1,
+    "augment_len": 2,
+    "min_augment_len": 2,
+    "trajectory_length": 50,
+    "real_drone": true,
+
+    "local_ray": true,
+
+    "corpus_name": "8000",
+    "use_wordset_from_corpus": "7000",
+
+    "eval_nl": true
+  },
+  "Data": {
+    "object_database_sim": null,
+    "object_database_real": "object_database_test_real",
+    "index_supervised_data_by_env": false,
+    "collect_n_at_a_time": 1
+  },
+  "ModelPVN": {
+    "object_recognizer_model_name": "components/supervised_object_reference_recognizer_train_object_reference_recognizer_2layer_h20_adam_dropout_balanced_epoch_150",
+    "Stage1": {
+      "plan_every_n_steps": 1,
+      "perturb_maps": false,
+      "SegmentationModel": {
+        "rpn_model_name": "components/data6/supervised_region_proposal_network_train_region_proposal_network_real_data6_epoch_25",
+        "refinement_model_name": "components/data6/supervised_region_refinement_network_train_region_refinement_network_real_data6_epoch_1000",
+        "matching_model_name": "components/data6/supervised_multi_matching_network_train_MULTI_matching_real_std_data6_epoch_5000"
+      },
+      "use_visitation_discriminator": true,
+      "distributed_training_of_visitation_discriminator": true
+    }
+  },
+  "PVNWrapper": {
+    "stage1_model_type": "RPN_FSPVN",
+    "stage1_file": "emnlp/fspvn/SuReAL_train_rpn_fspvn_aug1-2_2020_stage1_RL_epoch_177",
+    "stage2_file": "emnlp/fspvn/SuReAL_train_rpn_fspvn_aug1-2_2020_stage2_RL_epoch_177",
+    "add_model_state_to_rollout_data": true
+  }
+}

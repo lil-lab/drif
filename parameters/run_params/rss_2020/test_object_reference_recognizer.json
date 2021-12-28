@@ -1,0 +1,42 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/models/object_reference_recognizer",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/pvn2_overlay",
+    "rss_2020/bidomain_train_overlay"
+  ],
+  "Setup":
+  {
+    "model": "object_reference_recognizer",
+    "model_file": "components/supervised_object_reference_recognizer_train_object_reference_recognizer_2layer_h20_adam_dropout_balanced_epoch_150",
+    "critic_model": null,
+
+    "run_name": "test_object_reference_recognizer_2layer_h20_e150",
+    "num_workers": 1,
+    "augment_len": 1,
+    "min_augment_len": 1,
+    "trajectory_length": 10
+  },
+
+  "Training":
+  {
+    "batch_size": 64,
+    "num_loaders": 1
+  },
+
+  "Data":
+  {
+  }
+}

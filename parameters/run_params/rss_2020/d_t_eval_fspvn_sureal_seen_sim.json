@@ -1,0 +1,16 @@
+{
+  "@include": [
+    "rss_2020/d_eval_fspvn_sureal_unseen_sim",
+    "rss_2020/eval/datasplits/test_small_seen"
+  ],
+  "Setup": {
+    "model": "rpn_fspvn_full_bidomain",
+    "model_file": null,
+    "run_name": "test_fspvn_SuReAL_seen_sim_affinity",
+    "real_drone": false,
+    "env_range_end": 7000
+  },
+  "PVNWrapper": {
+    "add_model_state_to_rollout_data": false
+  }
+}

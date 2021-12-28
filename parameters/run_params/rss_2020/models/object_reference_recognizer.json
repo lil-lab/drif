@@ -1,0 +1,5 @@
+{
+  "ModelObjectReferenceRecognizer": {
+    "embedding_dim": 300
+  }
+}

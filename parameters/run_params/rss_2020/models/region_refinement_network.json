@@ -1,0 +1,12 @@
+{
+  "ModelRegionRefinementNetwork": {
+    "UNet": {
+          "in_channels": 3,
+          "out_channels": 1,
+          "hc1": 32,
+          "hc2": 32,
+          "hc3": 32,
+          "stride": 2
+        }
+  }
+}

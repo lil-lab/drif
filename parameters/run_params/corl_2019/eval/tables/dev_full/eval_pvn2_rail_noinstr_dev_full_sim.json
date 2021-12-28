@@ -1,0 +1,10 @@
+{
+  "@include":[
+    "corl_2019/eval/systems/eval_pvn2_rail_noinstr",
+    "corl_2019/eval/datasplits/dev_full"
+  ],
+  "Setup":{
+    "run_name": "eval_pvn2_rail_noinstr_dev_full_sim",
+    "real_drone": false
+  }
+}

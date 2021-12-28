@@ -1,0 +1,20 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/models/pvn_cage_bidomain_with_unseen",
+    "include/models/pvn_critic",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/models/object_reference_recognizer",
+    "rss_2020/models/fspvn_cage_bidomain",
+    "rss_2020/models/region_proposal_network",
+    "rss_2020/models/region_refinement_network",
+    "rss_2020/models/simple_matching_network",
+    "rss_2020/rss_2020_overlay"
+  ]
+}

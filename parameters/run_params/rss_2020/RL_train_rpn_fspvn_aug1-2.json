@@ -1,0 +1,73 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/models/object_reference_recognizer",
+    "rss_2020/models/fspvn_cage_bidomain",
+    "rss_2020/models/region_proposal_network",
+    "rss_2020/models/region_refinement_network",
+    "rss_2020/models/simple_matching_network",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/fspvn_overlay",
+    "rss_2020/bidomain_train_overlay",
+    "rss_2020/rail_overlay"
+  ],
+  "Setup": {
+    "model": "rpn_fspvn_full_bidomain",
+    "model_file": null,
+    "run_name": "RL_train_rpn_fspvn_aug1-2_t",
+    "num_workers": 1,
+    "augment_len": 2,
+    "min_augment_len": 1,
+    "trajectory_length": 35,
+    "ŗeal_drone": false
+  },
+  "Training": {
+    "batch_size": 1,
+    "num_loaders": 10,
+    "lr": 0.001
+  },
+  "Data": {
+    "dataset_names": [
+      "simulator_basic_slow"
+    ],
+    "object_database_train": "train_sim",
+    "object_database_dev": "in_dev_sim"
+  },
+  "ModelPVN": {
+    "object_recognizer_model_name": "components/supervised_object_reference_recognizer_train_object_reference_recognizer_2layer_h20_adam_dropout_balanced_epoch_150",
+    "rpn_model_name": "components/data6/supervised_region_proposal_network_train_region_proposal_network_X4_rad0.5_DATA6_epoch_10",
+    "refinement_model_name": "components/data6/supervised_region_refinement_network_train_region_refinement_network_pytproc_2_noaug_DATA6_epoch_562",
+    "matching_model_name": "components/data6/supervised_multi_matching_network_train_MULTI_matching_sim_huge_pytproc_MAXSIM_l2dist_lesswd_absoloss_DATA6_2_epoch_6119"
+  },
+  "PVNWrapper": {
+    "learning_mode": "reinforcement_learning",
+    "pvn_version": "v2",
+    "stage1_model_type": "RPN_FSPVN",
+    "stage1_file": "fspvn_stage1_test/supervised_rpn_fspvn_stage1_train_rpn_fspvn_aug1-2_rad0.5_kde_DATA6_redesign_bounds_objects_FAST_P_epoch_1",
+    "stage2_file": false,
+    "wasserstein_reward": true,
+    "wd_reward": {
+      "stop_alpha": 0.5,
+      "stop_p_alpha": 0.0,
+      "visit_alpha": 0.3,
+      "exploration_alpha": 1.0,
+      "stop_oob_alpha": 3.0,
+      "step_alpha": 0.04
+    },
+    "explore_reward_only": false
+  },
+  "RL": {
+    "num_workers": 2
+  }
+}

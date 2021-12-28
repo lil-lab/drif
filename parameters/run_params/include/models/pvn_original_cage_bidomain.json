@@ -1,0 +1,111 @@
+{
+  "ModelPVN": {
+    "Stage1": {
+      "vocab_size": 2200,
+      "num_landmarks": 64,
+      "emb_size": 30,
+      "emb_layers": 1,
+      "emb_dropout": 0.0,
+      "word_emb_size": 20,
+      "mlp_hidden": 32,
+      "resnet_channels": 32,
+      "feature_channels": 32,
+      "relevance_channels": 3,
+      "pathpred_in_channels": 35,
+      "global_map_size": 32,
+      "local_map_size": 64,
+      "world_size_px": 32,
+      "world_size_m": 4.7,
+      "img_w": 128,
+      "img_h": 72,
+      "cam_h_fov": 84,
+      "plan_every_n_steps": 5,
+      "predict_confidence": false,
+      "clear_history": true,
+      "perturb_maps": true,
+      "pos_variance": 0.0,
+      "rot_variance": 1.0,
+      "predict_in_start_frame": true,
+      "path_loss_function": "crossentropy",
+      "run_auxiliaries": true,
+      "write_figures": false,
+      "write_gifs": false,
+      "compute_prior": false,
+      "use_prior_only": false,
+      "clip_observability": false,
+      "ignore_instruction": false,
+
+      "lingunet": {
+        "in_channels": 32,
+        "in_channels_": "@../feature_channels",
+        "out_channels": 2,
+        "embedding_size": 30,
+        "embedding_size_": "@../emb_size",
+        "upscale_conv": false,
+        "double_up": true,
+        "hc1": 48,
+        "hb1": 24,
+        "hc2": 256,
+        "stride": 2,
+        "split_embedding": false
+      }
+    },
+    "Stage2": {
+      "stop_threshold": 0.08,
+      "test_time_amplifier": 2.0,
+      "map_to_act_channels": 2,
+      "crop_size": 16,
+      "action_in_path_only": false,
+      "action_recurrence": false,
+      "map_structure_channels": 1,
+      "use_map_boundary": false,
+      "add_vdist_to_mapinfo": false
+    },
+    "UseAux": {
+      "class_features": false,
+      "grounding_features": false,
+      "class_map": true,
+      "grounding_map": true,
+      "goal_map": false,
+      "lang": true,
+      "regularize_map": true
+    },
+    "AuxWeights": {
+      "class_features": 1.0,
+      "grounding_features": 1.0,
+      "class_map": 1.0,
+      "grounding_map": 1.0,
+      "lang": 1.0,
+      "visitation_dist": 1.0,
+      "regularize_map": 1.0,
+      "visitation_confidence": 1.0
+    },
+    "AuxWeightsRealOverride": {
+      "visitation_dist": 0.05,
+      "lang": 0.05
+    }
+  },
+  "PVNWrapper":
+  {
+    "learning_mode": "reinforcement_learning",
+    "pvn_version": "v1",
+    "stage1_file": false,
+    "stage2_file": false,
+    "wasserstein_reward": true,
+    "wd_reward":{
+      "stop_alpha": 0.5,
+      "stop_p_alpha": 1.0,
+      "visit_alpha": 0.3,
+      "exploration_alpha": 1.0,
+      "stop_oob_alpha": 1.0,
+      "step_alpha": 0.02
+    },
+    "explore_reward_only": false
+  },
+  "Data": {
+    "noisy_pos_variance": 0,
+    "noisy_rot_variance": 0,
+    "img_w": 128,
+    "img_h": 96
+  }
+}

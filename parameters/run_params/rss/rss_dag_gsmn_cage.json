@@ -1,0 +1,63 @@
+{
+  "@include": [
+    "environments/cage_tplt",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/models/gsmn_cage",
+    "include/airsim_drone_controller_cage"
+  ],
+  "Setup":
+  {
+    "model": "gsmn_cage",
+    "model_file": "supervised_gsmn_cage_gsmn_sup_pretrained_features_b",
+    "run_name": "gsmn_dag_pretrained_features_b",
+    "num_workers": 1,
+    "cuda": true,
+    "max_envs": -1,
+    "eval_nl": false
+  },
+  "AirSim":
+  {
+    "ClockSpeed": 2.0
+  },
+  "Supervised": {
+    "num_epochs": 100
+  },
+  "Rollout":
+  {
+    "oracle_type": "SimpleCarrotPlanner"
+  },
+  "SimpleCarrotPlanner":
+  {
+    "vel_x": 1.0,
+    "min_vel_x": 0.1,
+    "k_yaw": 0.5,
+    "K_Offset": 0.1,
+    "LOOKAHEAD": 12,
+    "accelerate_steps": 3
+  },
+  "Model":
+  {
+    "load_feature_net": true,
+    "feature_net_filename": "pretrain_resnet_e",
+    "feature_net_tensor_name": "model_sim.img_to_features",
+    "freeze_feature_net": true
+  },
+  "Data":
+  {
+    "dataset_name": "simulator"
+  },
+  "PomdpInterface":
+  {
+    "flight_height": 0.7,
+    "voice": false
+  }
+}

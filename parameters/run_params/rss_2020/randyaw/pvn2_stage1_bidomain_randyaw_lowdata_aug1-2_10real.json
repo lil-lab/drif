@@ -1,0 +1,45 @@
+{
+  "@include": [
+    "environments/cage_nl_augmented",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/models/pvn_cage_bidomain",
+    "include/models/pvn_critic",
+    "include/airsim_drone_controller_cage",
+    "corl_2019/corl_2019_overlay",
+    "corl_2019/pvn2_overlay",
+    "corl_2019/bidomain_train_overlay",
+    "corl_2019/real_data_splits"
+  ],
+  "Setup":
+  {
+    "model": "pvn_stage1_bidomain",
+    "critic_model": "pvn_stage1_critic",
+
+    "run_name": "pvn2_stage1_aug1-2_randyaw_10real",
+    "num_workers": 1,
+    "augment_len": 2,
+    "min_augment_len": 1,
+    "trajectory_length": 35
+  },
+  "Data":
+  {
+    "dataset_env_restrictions":
+    {
+      "real": "10"
+    }
+  },
+  "Training":
+  {
+    "real_dataset_names": ["real"],
+    "sim_dataset_names": ["simulator_randyaw_s_oracle_2"]
+  }
+}

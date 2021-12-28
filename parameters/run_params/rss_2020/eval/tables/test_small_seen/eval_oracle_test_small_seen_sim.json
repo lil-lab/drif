@@ -1,0 +1,10 @@
+{
+  "@include":[
+    "rss_2020/eval/systems/eval_oracle",
+    "rss_2020/eval/datasplits/test_small_seen"
+  ],
+  "Setup":{
+    "run_name": "eval_oracle_test_small_seen_sim",
+    "real_drone": false
+  }
+}

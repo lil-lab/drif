@@ -1,0 +1,23 @@
+{
+  "MultipleEval": {
+    "run_name": "baselines_test_full_sim",
+    "one_at_a_time": false,
+    "SetupOverlay":{
+      "real_drone": false
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_stop_test_full",
+        "param_file": "corl_2019/eval/tables/test_full/eval_stop_test_full_sim"
+      },
+      {
+        "param_namespace": "eval_average_test_full",
+        "param_file": "corl_2019/eval/tables/test_full/eval_average_test_full_sim"
+      },
+      {
+        "param_namespace": "eval_oracle_test_full",
+        "param_file": "corl_2019/eval/tables/test_full/eval_oracle_test_full_sim"
+      }
+    ]
+  }
+}

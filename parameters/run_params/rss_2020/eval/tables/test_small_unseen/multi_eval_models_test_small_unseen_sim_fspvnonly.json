@@ -1,0 +1,15 @@
+{
+  "MultipleEval": {
+    "run_name": "models_test_small_unseen_sim",
+    "one_at_a_time": false,
+    "SetupOverlay":{
+      "real_drone": false
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_fspvn_sureal_test_small_unseen",
+        "param_file": "rss_2020/eval/tables/test_small_unseen/eval_fspvn_sureal_test_small_unseen_sim"
+      }
+    ]
+  }
+}

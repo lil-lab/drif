@@ -1,0 +1,17 @@
+{
+  "@include": [
+    "rss_2020/train_SUP_fspvn_stage1"
+  ],
+  "Setup":
+  {
+    "run_name": "test_SUP_fspvn_stage1-data7_maxS-6000-7000",
+    "model_file": "tmp/supervised_rpn_fspvn_stage1_train_SUP_fspvn_stage1-data7_maxS_epoch_21",
+    "augment_len": 2,
+    "min_augment_len": 2,
+    "env_range_start": 6000,
+    "env_range_end": 7000,
+
+    "corpus_name": "7000",
+    "use_wordset_from_corpus": "7000"
+  }
+}

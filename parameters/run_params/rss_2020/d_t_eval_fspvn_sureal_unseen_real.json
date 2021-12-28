@@ -1,0 +1,23 @@
+{
+  "@include": [
+    "rss_2020/d_t_eval_fspvn_sureal_unseen_sim"
+  ],
+  "Setup": {
+    "run_name": "test_fspvn_SuReAL_unseen_real_affinity",
+    "real_drone": true
+  },
+  "PVNWrapper": {
+    "add_model_state_to_rollout_data": true
+  },
+  "ModelPVN": {
+    "Stage1": {
+      "SegmentationModel": {
+        "rpn_model_name": "components/data6/supervised_region_proposal_network_train_region_proposal_network_real_data6_epoch_25",
+        "refinement_model_name": "components/data6/supervised_region_refinement_network_train_region_refinement_network_real_data6_epoch_1000",
+        "matching_model_name": "components/data6/supervised_multi_matching_network_train_MULTI_matching_real_std_data6_epoch_5000"
+      },
+      "use_visitation_discriminator": false,
+      "distributed_training_of_visitation_discriminator": false
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "Setup":
+  {
+    "run_name": "eval_stop",
+    "model": "stop",
+    "model_file": false,
+    "max_envs": -1,
+    "num_workers": 1,
+    "trajectory_length": 50,
+    "eval_landmark_side": false,
+    "eval_nl": true,
+    "augment_len": 2,
+    "min_augment_len": 1,
+    "use_rviz": false
+  },
+  "AirSim":{
+    "ClockSpeed": 1.0
+  }
+}

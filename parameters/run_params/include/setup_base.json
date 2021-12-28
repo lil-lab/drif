@@ -1,0 +1,37 @@
+{
+  "Setup":
+  {
+    "model": "oracle",
+    "model_file": "",
+    "run_name": "base_run",
+    "num_workers": 1,
+    "first_worker": 0,
+    "max_envs": -1,
+    "env_range_start": 0,
+    "env_range_end": -1,
+    "cuda": false,
+    "default_device": "cpu",
+
+    "eval_env_set": "dev",
+    "eval_landmark_side": false,
+    "eval_nl": true,
+    "eval_pretrain": true,
+    "empty_envs": false,
+
+    "restore_weights_name": "",
+    "fix_restored_weights": false,
+    "debug": false,
+
+    "trajectory_length": 220,
+    "write_summaries": true,
+    "prune_ambiguous": false,
+
+    "passive_mode": false,
+
+    "empty_emvs": false,
+
+    "_comment": "The following allows using a word set (corpus) from a different annotation set to train/test on different corpora",
+    "corpus_name": "7000",
+    "use_wordset_from_corpus": "7000"
+  }
+}

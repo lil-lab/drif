@@ -1,0 +1,75 @@
+{
+  "@include":[
+    "environments/cage_nl_augmented",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/models/pvn_cage_bidomain",
+    "include/models/pvn_critic",
+    "include/airsim_drone_controller_cage",
+    "corl_2019/baseline_average"
+  ],
+  "Setup":
+  {
+    "real_model_file": false,
+    "sim_model_file": false,
+    "critic_model_file": false,
+
+    "cuda": true,
+    "max_envs": -1,
+    "world_size_m": 4.7
+  },
+  "Rollout":
+  {
+    "oracle_type": "BasicCarrotPlanner"
+  },
+  "BasicCarrotPlannerRoll":
+  {
+    "vel_x": 1.5,
+    "min_vel_x": 0.3,
+    "k_yaw": 1.0,
+    "lookahead_dst": 0.5,
+    "accelerate_steps": 3,
+    "end_dst": 0.5,
+    "stop_dst": 0.14,
+    "decelerate_for_turns": true
+  },
+  "BasicCarrotPlanner":
+  {
+    "vel_x": 1.0,
+    "min_vel_x": 0.3,
+    "k_yaw": 1.0,
+    "lookahead_dst": 0.7,
+    "accelerate_steps": 3,
+    "end_dst": 0.7,
+    "stop_dst": 0.25,
+    "decelerate_for_turns": true
+  },
+  "PomdpInterface":
+  {
+    "flight_height": 0.7,
+    "voice": false
+  },
+  "Data":
+  {
+    "min_seg_len": 1,
+    "cache": false
+  },
+  "RLSUP":{
+    "sim_seed_dataset": "simulator_basic",
+    "real_seed_dataset": "real"
+  },
+  "Camcorder1":{
+    "video_devices": ["/dev/video1", "/dev/video2"],
+    "video_names": ["ceiling", "corner"],
+    "options": ["-video_size 1920x1080 -filter:v 'crop=960:960:480:50'", "-video_size 1920x1080 -vcodec libx264 -crf 27"],
+    "discard_output": true
+  }
+}

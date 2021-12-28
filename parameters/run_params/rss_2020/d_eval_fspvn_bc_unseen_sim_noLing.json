@@ -1,0 +1,72 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/models/object_reference_recognizer",
+    "rss_2020/models/fspvn_cage_bidomain",
+    "rss_2020/models/region_proposal_network",
+    "rss_2020/models/region_refinement_network",
+    "rss_2020/models/simple_matching_network",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/fspvn_overlay",
+    "rss_2020/bidomain_train_overlay",
+    "rss_2020/eval/datasplits/dev_small_unseen"
+  ],
+  "Setup": {
+    "model": "rpn_fspvn_full_bidomain",
+    "model_file": null,
+    "run_name": "dev_fspvn_bc_unseen_sim_noLing_suptest",
+    "num_workers": 1,
+    "augment_len": 2,
+    "min_augment_len": 2,
+    "trajectory_length": 50,
+    "real_drone": false,
+
+    "local_ray": true,
+
+    "corpus_name": "8000",
+    "use_wordset_from_corpus": "7000",
+
+    "env_range_start": 7000,
+    "env_range_end": 8000,
+
+    "eval_nl": true
+  },
+  "Data": {
+    "object_database_sim": "object_database_test_sim",
+    "object_database_real": "object_database_test_real",
+    "index_supervised_data_by_env": true,
+    "collect_n_at_a_time": 1
+  },
+  "ModelPVN": {
+    "object_recognizer_model_name": "components/supervised_object_reference_recognizer_train_object_reference_recognizer_2layer_h20_adam_dropout_balanced_epoch_150",
+    "Stage1": {
+      "noLing": true,
+      "plan_every_n_steps": 1,
+      "perturb_maps": false,
+      "SegmentationModel": {
+        "rpn_model_name": "components/data7/supervised_region_proposal_network_train_region_proposal_network_sim_data7_epoch_25",
+        "refinement_model_name": "components/data7/supervised_region_refinement_network_train_region_refinement_network_sim_data7_epoch_1000",
+        "matching_model_name": "components/data7/supervised_multi_matching_network_train_MULTI_matching_sim_data7_epoch_9000"
+      },
+      "use_visitation_discriminator": false,
+      "distributed_training_of_visitation_discriminator": false
+    }
+  },
+  "PVNWrapper": {
+    "stage1_model_type": "RPN_FSPVN",
+    "stage1_file": "emnlp/fspvn_stage1/supervised_rpn_fspvn_stage1_train_SUP_fspvn_stage1-data7_aug1-2_noD_noLing_affinity_epoch_29",
+    "stage2_file": "emnlp/supervised_rpn_fspvn_stage2_train_SUP_fspvn_stage2v2-aug1-2_epoch_0",
+    "add_model_state_to_rollout_data": false
+  }
+}

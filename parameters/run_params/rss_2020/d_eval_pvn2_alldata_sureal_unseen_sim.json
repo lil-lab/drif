@@ -1,0 +1,52 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/models/pvn_cage_bidomain_with_unseen",
+    "include/models/pvn_critic",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/pvn2_overlay",
+    "rss_2020/bidomain_train_overlay",
+    "rss_2020/eval/datasplits/dev_small_unseen"
+  ],
+
+  "Setup": {
+    "model": "rpn_fspvn_full_bidomain",
+    "model_file": null,
+    "run_name": "eval_pvn2_sureal_alldata_unseen_sim",
+    "num_workers": 1,
+    "augment_len": 2,
+    "min_augment_len": 1,
+    "trajectory_length": 50,
+    "real_drone": false,
+
+    "local_ray": true,
+
+    "corpus_name": "8000",
+    "use_wordset_from_corpus": "8000",
+
+    "eval_nl": true,
+    "default_device": "cuda"
+  },
+
+   "PVNWrapper": {
+     "stage1_model_type": "PVNv2",
+     "stage1_file": "emnlp/pvn2/sureal/pvn2_alldata/e163/SuReAL_pvn2plus_bidomain_alldata_nw3_SUP_stage1_sim_183",
+     "stage2_file": "emnlp/pvn2/sureal/pvn2_alldata/e163/SuReAL_pvn2plus_bidomain_alldata_nw3_stage2_RL_epoch_163",
+     "add_model_state_to_rollout_data": false
+  },
+
+  "Data": {
+    "index_supervised_data_by_env": false,
+    "collect_n_at_a_time": 1
+  }
+}

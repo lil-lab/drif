@@ -1,0 +1,10 @@
+{
+  "@include":[
+    "corl_2019/eval/systems/eval_pvn2_rail",
+    "corl_2019/eval/datasplits/dev_small_interesting"
+  ],
+  "Setup":{
+    "run_name": "eval_pvn2_rail_dev_small_sim",
+    "real_drone": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Environment":
+  {
+    "airsim_settings_path": "~/Documents/AirSim/settings.json",
+    "simulator_path": "~/shelf_space/droning/unreal_project/DroneSimLabUnseen/LinuxNoEditor/MyProject5.sh",
+    "sim_config_dir": "/home/clic/unreal_config/",
+    "config_dir": "/home/clic/shelf_space/cage_workspaces/unreal_config_nl_cage_rss2020",
+    "grounding_data_dir": "/home/clic/BigStore/grounding_data_rss2020",
+    "templates": false,
+    "headless": false
+  }
+}

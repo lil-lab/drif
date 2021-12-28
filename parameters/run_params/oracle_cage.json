@@ -1,0 +1,42 @@
+{
+  "@include": [
+    "airsim/settings_cage",
+    "environments/cage_nl",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger",
+    "include/training/supervised",
+    "include/models/gsmn_cage",
+    "include/airsim_drone_controller_cage"
+  ],
+
+  "Setup":
+  {
+    "run_name": "oracle_cage",
+    "model": "oracle",
+    "model_file": "",
+    "eval_env_set": "test",
+    "num_workers": 1,
+    "cuda": false,
+    "max_envs": -1,
+    "debug": false,
+    "real_drone": false,
+    "passive_mode": false,
+    "dont_place_landmarks": false,
+    "world_size_m": 4.7
+  },
+  "Rollout":
+  {
+    "oracle_type": "BasicCarrotPlanner"
+  },
+  "PomdpInterface":
+  {
+    "flight_height": 0.7,
+    "voice": false
+  }
+}

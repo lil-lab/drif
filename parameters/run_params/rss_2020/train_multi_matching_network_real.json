@@ -1,0 +1,42 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/models/simple_matching_network",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/pvn2_overlay",
+    "rss_2020/bidomain_train_overlay"
+  ],
+  "Setup": {
+    "model": "multi_matching_network",
+    "model_file": "tmp/supervised_multi_matching_network_train_MULTI_matching_real_std_data6_epoch_5999",
+    "critic_model": null,
+    "run_name": "train_MULTI_matching_real_std_data6_c6000",
+    "num_workers": 1,
+    "augment_len": 1,
+    "min_augment_len": 1,
+    "trajectory_length": 1,
+    "default_device": "cuda:1"
+  },
+  "Training": {
+    "batch_size": 256,
+    "num_loaders": 10,
+    "lr__": 0.001,
+    "weight_decay": 1e-4
+  },
+  "Data": {
+    "object_matching_training_dataset": "grounding_data_real_6/composed_03/",
+    "object_matching_test_dataset": "grounding_data_real_test",
+    "grayscale": false
+  }
+}

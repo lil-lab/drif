@@ -1,0 +1,19 @@
+{
+  "MultipleEval": {
+    "run_name": "models_dev_interesting_real",
+    "one_at_a_time": true,
+    "SetupOverlay":{
+      "real_drone": true
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_pvn2_rail_mexp_dev_interesting",
+        "param_file": "corl_2019/eval/tables/interesting_envs/eval_pvn2_rail_mexp_dev_interesting_real"
+      },
+      {
+        "param_namespace": "eval_pvn2_rail_newexp_dev_interesting",
+        "param_file": "corl_2019/eval/tables/interesting_envs/eval_pvn2_rail_newexp_dev_interesting_real"
+      }
+    ]
+  }
+}

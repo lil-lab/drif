@@ -1,0 +1,47 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/models/pvn_cage_bidomain_with_unseen",
+    "include/models/pvn_critic",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/pvn2_overlay",
+    "rss_2020/bidomain_train_overlay",
+    "rss_2020/eval/datasplits/dev_small_unseen"
+  ],
+
+  "Setup": {
+    "model": "average",
+    "model_file": null,
+    "run_name": "dev_average_sim",
+    "num_workers": 1,
+    "augment_len": 2,
+    "min_augment_len": 1,
+    "trajectory_length": 50,
+    "real_drone": false,
+
+    "local_ray": true,
+
+    "corpus_name": "8000",
+    "use_wordset_from_corpus": "8000",
+
+    "eval_nl": true,
+    "default_device": "cuda"
+  },
+
+  "Data": {
+    "object_database_sim": null,
+    "object_database_real": "object_database_test_sim_unseen",
+    "index_supervised_data_by_env": false,
+    "collect_n_at_a_time": 1
+  }
+}

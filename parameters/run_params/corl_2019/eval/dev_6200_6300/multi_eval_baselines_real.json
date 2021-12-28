@@ -1,0 +1,21 @@
+{
+  "MultipleEval": {
+    "run_name": "eval_test_realset__multi_baselines_sim",
+    "_comment1": "SetupOverlay is overlaid over the Setup for each model eval config",
+    "SetupOverlay": {
+      "eval_env_set": "test",
+      "real_drone": false,
+      "trajectory_length": 50
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_oracle",
+        "param_file": "corl_2019/eval/eval_test_realset_oracle"
+      },
+      {
+        "param_namespace": "eval_average",
+        "param_file": "corl_2019/eval/eval_test_realset_average"
+      }
+    ]
+  }
+}

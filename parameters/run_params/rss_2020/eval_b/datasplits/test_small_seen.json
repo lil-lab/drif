@@ -1,0 +1,11 @@
+{
+  "Setup": {
+    "max_envs": -1,
+    "env_range_start": 6000,
+    "env_range_end": 7000,
+    "only_specific_envs": [6045, 6047, 6101, 6103, 6255, 6257, 6381, 6382, 6406, 6408, 6450, 6451, 6540, 6542, 6740, 6742, 6757, 6758, 6851, 6853],
+    "eval_env_set": "test",
+    "augment_len": 2,
+    "min_augment_len": 2
+  }
+}

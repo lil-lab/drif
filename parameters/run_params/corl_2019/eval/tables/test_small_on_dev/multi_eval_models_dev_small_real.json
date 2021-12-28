@@ -1,0 +1,25 @@
+{
+  "MultipleEval": {
+    "run_name": "models_test_on_dev_small_real",
+    "one_at_a_time": true,
+    "SetupOverlay":{
+      "real_drone": true
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_pvn2_rail_mexp_dev_small",
+        "param_file": "corl_2019/eval/tables/test_small_on_dev/eval_pvn2_rail_mexp_dev_small_real"
+      }
+    ],
+    "Unused":[
+      {
+        "param_namespace": "eval_pvn2_il_dev_small",
+        "param_file": "corl_2019/eval/tables/test_small_on_dev/eval_pvn2_il_dev_small_real"
+      },
+      {
+        "param_namespace": "eval_pvn_original_bc_dev_small",
+        "param_file": "corl_2019/eval/tables/test_small_on_dev/eval_pvn_original_bc_dev_small_real"
+      }
+    ]
+  }
+}

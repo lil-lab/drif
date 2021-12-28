@@ -1,0 +1,24 @@
+{
+  "Training": {
+    "bidata": true,
+    "use_oracle_critic": true,
+    "critic_steps": 5,
+    "model_steps": 1,
+    "critic_batch_size": 1,
+    "model_batch_size": 1,
+    "sim_steps_per_common_step": 3,
+    "model_common_loaders": 3,
+    "model_sim_loaders": 5,
+    "critic_loaders": 6,
+    "disable_wloss": false,
+    "disable_domain_weight_sharing": false,
+    "sim_domain_only": false,
+    "real_grad_noise": false,
+    "weight_decay": 1e-8,
+    "optimizer": "adam",
+    "lr": 0.001
+  },
+  "Supervised": {
+    "num_epochs": 100000
+  }
+}

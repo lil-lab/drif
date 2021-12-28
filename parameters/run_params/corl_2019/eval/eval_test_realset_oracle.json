@@ -1,0 +1,10 @@
+{
+  "@include":[
+    "corl_2019/eval/systems/eval_oracle",
+    "corl_2019/eval/datasplits/test_realset"
+  ],
+
+  "Setup":{
+    "run_name": "eval_test_realset_sim_eval_oracle"
+  }
+}

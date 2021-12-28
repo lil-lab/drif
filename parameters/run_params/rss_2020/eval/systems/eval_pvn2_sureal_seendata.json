@@ -1,0 +1,29 @@
+{
+  "@include": [
+    "rss_2020/eval/eval_includes",
+    "rss_2020/pvn2_overlay",
+    "rss_2020/eval/eval_overlay"
+  ],
+
+  "Setup":
+  {
+    "run_name": "eval_pvn2_sureal_seendata",
+    "model": "pvn_full_bidomain",
+    "model_file": false,
+    "corpus_name": "8000",
+    "use_wordset_from_corpus": "7000"
+  },
+  "ModelPVN": {
+    "Stage1": {
+      "perturb_maps": false,
+      "plan_every_n_steps": 1
+    }
+  },
+  "PVNWrapper":
+  {
+    "learning_mode": "reinforcement_learning",
+    "stage1_file_sim": "sureal/pvn2plus-seendata/pvn2plus-seendata_stage1_sim",
+    "stage1_file_real": "sureal/pvn2plus-seendata/pvn2plus-seendata_stage1_real",
+    "stage2_file": "sureal/pvn2plus-seendata/pvn2plus-seendata_stage2"
+  }
+}

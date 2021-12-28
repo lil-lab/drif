@@ -1,0 +1,6 @@
+{
+  "ModelSimpleMatchingNetwork":
+  {
+    "imagenet_features": false
+  }
+}

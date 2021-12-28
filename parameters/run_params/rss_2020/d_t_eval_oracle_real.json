@@ -1,0 +1,9 @@
+{
+  "@include": [
+    "rss_2020/d_eval_oracle_real",
+    "rss_2020/eval/datasplits/test_small_unseen"
+  ],
+  "Setup": {
+    "run_name": "test_oracle_real"
+  }
+}

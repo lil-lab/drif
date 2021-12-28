@@ -1,0 +1,48 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/models/pvn_cage_bidomain_with_unseen",
+    "include/models/pvn_critic",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/pvn2_overlay",
+    "rss_2020/bidomain_train_overlay"
+  ],
+  "Setup":
+  {
+    "model": "pvn_stage1_bidomain",
+    "critic_model": "pvn_stage1_critic",
+
+    "run_name": "pvn2plus_stage1_aug1-2_seendata",
+    "num_workers": 1,
+    "augment_len": 2,
+    "min_augment_len": 1,
+    "trajectory_length": 35,
+    "env_range_start": 0,
+    "env_range_end": 7000,
+
+    "h_offset_sim": 0.15,
+    "h_offset_real": 0.00,
+
+    "corpus_name": "7000",
+    "use_wordset_from_corpus": "7000",
+
+    "default_device": "cuda"
+  },
+
+  "Training":
+  {
+    "real_dataset_names": ["real_seen"],
+    "sim_dataset_names": ["8k_full"]
+  }
+}

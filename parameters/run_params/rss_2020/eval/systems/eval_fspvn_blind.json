@@ -1,0 +1,43 @@
+{
+  "@include": [
+    "rss_2020/eval/eval_includes",
+    "rss_2020/fspvn_overlay",
+    "rss_2020/eval/eval_overlay"
+  ],
+
+  "Setup":
+  {
+    "run_name": "eval_fspvn_sureal",
+    "model": "rpn_fspvn_full_bidomain",
+    "sup_model": "rpn_fspvn_stage1",
+    "model_file": false,
+    "corpus_name": "7000",
+    "use_wordset_from_corpus": "7000"
+  },
+  "Data":
+  {
+    "object_database_train": "train_sim"
+  },
+  "ModelPVN": {
+    "object_recognizer_model_name": "components/supervised_object_reference_recognizer_train_object_reference_recognizer_2layer_h20_adam_dropout_balanced_epoch_150",
+
+    "rpn_model_name_sim": "components/data6/supervised_region_proposal_network_train_region_proposal_network_X4_rad0.5_DATA6_epoch_10",
+    "refinement_model_name_sim": "components/data6/supervised_region_refinement_network_train_region_refinement_network_pytproc_2_noaug_DATA6_epoch_562",
+    "matching_model_name_sim": "components/data6/supervised_multi_matching_network_train_MULTI_matching_sim_huge_pytproc_MAXSIM_l2dist_lesswd_absoloss_DATA6_2_epoch_6119",
+
+    "rpn_model_name_real": "components/real/supervised_region_proposal_network_train_region_proposal_network_real_epoch_20",
+    "refinement_model_name_real": "components/real/supervised_region_refinement_network_train_region_refinement_network_real_epoch_562",
+    "matching_model_name_real": "components/real/supervised_region_refinement_network_train_region_refinement_network_real_epoch_562",
+
+    "Stage1": {
+      "perturb_maps": false,
+      "plan_every_n_steps": 1
+    }
+  },
+  "PVNWrapper":
+  {
+    "learning_mode": "reinforcement_learning",
+    "stage1_file": "sureal/fspvn/fspvn_stage1_blind",
+    "stage2_file": "sureal/fspvn/fspvn_stage2_blind"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "@include":[
+    "corl_2019/eval/systems/eval_pvn2_rail_mexp",
+    "corl_2019/eval/datasplits/dev_interesting"
+  ],
+  "Setup":{
+    "run_name": "eval_pvn2_rail_mexp_dev_small_sim",
+    "real_drone": false,
+    "min_augment_len": 1,
+    "augment_len": 2
+  },
+
+  "_comment": "This MultipleEval is here to allow running the multiple eval script with just this config",
+  "MultipleEval": {
+    "run_name": "eval_pvn2_rail_mexp_dev_interesting_sim",
+    "one_at_a_time": false,
+    "SetupOverlay":{
+      "real_drone": false
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_pvn2_rail_mexp_dev_interesting",
+        "param_file": "corl_2019/eval/tables/interesting_envs/eval_pvn2_rail_mexp_dev_interesting_sim"
+      }
+    ]
+  }
+}

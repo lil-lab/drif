@@ -1,0 +1,19 @@
+{
+  "MultipleEval": {
+    "run_name": "baselines_test_small_real",
+    "one_at_a_time": true,
+    "SetupOverlay":{
+      "real_drone": true
+    },
+    "SystemsParams": [
+    {
+      "param_namespace": "eval_average_test_small",
+      "param_file": "corl_2019/eval/tables/test_small/eval_average_test_small_real"
+    },
+    {
+      "param_namespace": "eval_oracle_test_small",
+      "param_file": "corl_2019/eval/tables/test_small/eval_oracle_test_small_real"
+    }
+    ]
+  }
+}

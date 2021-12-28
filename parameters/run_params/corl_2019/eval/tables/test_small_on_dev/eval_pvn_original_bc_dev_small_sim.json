@@ -1,0 +1,12 @@
+{
+  "@include":[
+    "corl_2019/eval/systems/eval_pvn_bc",
+    "corl_2019/eval/datasplits/dev_small"
+  ],
+  "Setup":{
+    "run_name": "eval_pvn_original_bc_dev_small_sim",
+    "real_drone": false,
+    "min_augment_len": 1,
+    "augment_len": 2
+  }
+}

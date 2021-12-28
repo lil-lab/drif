@@ -1,0 +1,13 @@
+{
+  "@include": [
+    "corl_2019/eval/eval_includes",
+    "corl_2019/eval/eval_overlay"
+  ],
+
+  "Setup":
+  {
+    "run_name": "eval_stop",
+    "model": "stop",
+    "model_file": false
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "Setup":
+  {
+    "corpus_name": "8000",
+    "use_wordset_from_corpus": "7000"
+  }
+}

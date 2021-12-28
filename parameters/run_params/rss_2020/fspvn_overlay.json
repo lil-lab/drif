@@ -1,0 +1,87 @@
+{
+  "ModelPVN": {
+    "Stage1": {
+      "static_nod": true,
+      "weight_override": true,
+      "cover_init_pos": true,
+      "ignore_instruction": false,
+      "lingunet": {
+      },
+      "anon_bert": {
+        "vocab_size": 30523,
+        "hidden_size": 32,
+        "num_hidden_layers": 3,
+        "num_attention_heads": 4,
+        "intermediate_size": 128,
+        "hidden_act": "gelu",
+        "hidden_dropout_prob": 0.1,
+        "attention_probs_dropout_prob": 0.1,
+        "max_position_embeddings": 64,
+        "type_vocab_size": 2,
+        "initializer_range": 0.02,
+        "layer_norm_eps": 1e-12
+      },
+      "anon_bert_orig": {
+        "vocab_size": 30523,
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "hidden_act": "gelu",
+        "hidden_dropout_prob": 0.1,
+        "attention_probs_dropout_prob": 0.1,
+        "max_position_embeddings": 512,
+        "type_vocab_size": 2,
+        "initializer_range": 0.02,
+        "layer_norm_eps": 1e-12
+      }
+    },
+    "ActorCritic": {
+      "h1": 4,
+      "h2": 32,
+      "structure_h1": 4,
+      "obs_dim": 16
+    },
+    "Stage2":{
+      "map_structure_channels": 2,
+      "use_map_boundary": true,
+      "add_vdist_to_mapinfo": false
+    },
+    "UseAux": {
+      "class_features": false,
+      "grounding_features": false,
+      "class_map": true,
+      "grounding_map": true,
+      "goal_map": false,
+      "lang": true,
+      "regularize_map": true
+    },
+    "AuxWeights": {
+      "class_features": false,
+      "grounding_features": false,
+      "class_map": true,
+      "grounding_map": true,
+      "goal_map": false,
+      "lang": true,
+      "regularize_map": true
+    }
+  },
+  "PVNWrapper":
+  {
+    "learning_mode": "reinforcement_learning",
+    "pvn_version": "v2",
+    "stage1_model_type": "RPN_FSPVN",
+    "stage1_file": false,
+    "stage2_file": false,
+    "wasserstein_reward": true,
+    "wd_reward":{
+      "stop_alpha": 0.5,
+      "stop_p_alpha": 0.0,
+      "visit_alpha": 0.3,
+      "exploration_alpha": 1.0,
+      "stop_oob_alpha": 3.0,
+      "step_alpha": 0.04
+    },
+    "explore_reward_only": false
+  }
+}

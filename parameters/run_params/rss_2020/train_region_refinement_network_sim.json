@@ -1,0 +1,48 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/models/region_refinement_network",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/pvn2_overlay",
+    "rss_2020/bidomain_train_overlay"
+  ],
+  "Setup": {
+    "model": "region_refinement_network",
+    "model_file": null,
+    "critic_model": null,
+    "run_name": "train_region_refinement_network_sim",
+    "num_workers": 1,
+    "augment_len": 1,
+    "min_augment_len": 1,
+    "trajectory_length": 1
+  },
+  "Training": {
+    "batch_size": 256,
+    "num_loaders": 16,
+    "lr__": 0.001,
+    "weight_decay": 1e-5,
+    "no_eval": true
+  },
+  "Data": {
+    "rpn_training_dataset_composed": "grounding_data_sim_6/composed_03/",
+    "rpn_training_dataset_raw": "grounding_data_sim_6/raw/",
+    "rpn_test_dataset_composed": "grounding_data_sim_test_6k+/",
+    "rpn_test_dataset_raw": null,
+    "grayscale": false,
+    "blur": false,
+    "noise": false,
+    "rotate": false,
+    "flip": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "@include":[
+    "corl_2019/eval/systems/eval_pvn2_bc",
+    "corl_2019/eval/datasplits/test_small",
+    "corl_2019/eval/eval_real_overlay"
+  ],
+  "Setup":{
+    "run_name": "eval_pvn2_bc_test_small_real",
+    "real_drone": true
+  }
+}

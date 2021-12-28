@@ -1,0 +1,19 @@
+{
+  "MultipleEval": {
+    "run_name": "baselines_test_small_unseen_sim",
+    "one_at_a_time": false,
+    "SetupOverlay":{
+      "real_drone": false
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_average_test_small_unseen",
+        "param_file": "rss_2020/eval/tables/test_small_unseen/eval_average_test_small_unseen_real"
+      },
+      {
+        "param_namespace": "eval_oracle_test_small_unseen",
+        "param_file": "rss_2020/eval/tables/test_small_unseen/eval_oracle_test_small_unseen_real"
+      }
+    ]
+  }
+}

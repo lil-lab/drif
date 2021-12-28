@@ -1,0 +1,46 @@
+{
+  "@include": [
+    "rss_2020/train_SUP_fspvn_stage1_discriminator"
+  ],
+  "Setup":
+  {
+    "run_name": "test_SUP_fspvn_stage1-rpneval2",
+    "model_file": "emnlp/SuReAL_train_rpn_fspvn_aug1-2_ray_data7_Dv2_stage2v2_innernorm01_stage1_RL_epoch_182",
+    "augment_len": 2,
+    "min_augment_len": 1,
+    "env_range_start": 7000,
+    "env_range_end": 8000,
+
+    "corpus_name": "8000",
+    "use_wordset_from_corpus": "7000",
+
+    "real_drone": true,
+    "dev_on_train": false
+  },
+  "Training": {
+    "use_dataparallel": false
+  },
+  "ModelPVN": {
+    "Stage1": {
+      "plan_every_n_steps": 1,
+      "use_visitation_discriminator": true,
+      "distributed_training_of_visitation_discriminator": true,
+      "SegmentationModel": {
+        "rpn_model_name": "components/data6/supervised_region_proposal_network_train_region_proposal_network_real_data6_epoch_25",
+        "refinement_model_name": "components/data6/supervised_region_refinement_network_train_region_refinement_network_real_data6_epoch_1000",
+        "matching_model_name": "components/data6/supervised_multi_matching_network_train_MULTI_matching_real_std_data6_epoch_5000"
+      }
+    },
+    "object_recognizer_model_name": "components/supervised_object_reference_recognizer_train_object_reference_recognizer_2layer_h20_adam_dropout_balanced_epoch_150"
+  },
+
+  "Data":
+  {
+    "dataset_names_": ["8k_full"],
+    "dataset_names": ["eval/rpn_fspvn_full_bidomain--eval_fspvn_SuReAL_unseen_real_t"],
+    "dataset_names_": ["pvn_full_bidomain--eval_pvn2_rail_dev_small_real"],
+    "object_database_sim": "train_sim",
+    "object_database_real_": "train_real",
+    "object_database_real": "object_database_test_real"
+  }
+}

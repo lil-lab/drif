@@ -1,0 +1,63 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/models/pvn_cage_bidomain_with_unseen",
+    "include/models/pvn_critic",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/pvn2_overlay",
+    "rss_2020/bidomain_train_overlay",
+    "rss_2020/sureal_overlay"
+  ],
+
+  "Setup": {
+    "model": "pvn_full_bidomain",
+    "model_file": null,
+    "run_name": "eval_pvn2_sureal_seendata_e453",
+    "num_workers": 1,
+    "augment_len": 2,
+    "min_augment_len": 1,
+    "trajectory_length": 50,
+    "env_range_start": 6000,
+    "env_range_end": 7000,
+    "ŗeal_drone": false,
+
+    "local_ray": true,
+
+    "corpus_name": "7000",
+    "use_wordset_from_corpus": "7000",
+
+    "eval_nl": true,
+    "default_device": "cuda"
+  },
+
+  "PVNWrapper": {
+    "learning_mode": "reinforcement_learning",
+    "pvn_version": "v2",
+    "stage1_file": "emnlp/pvn2/sureal/SuReAL_pvn2plus_bidomain_seendata_F_stage1_RL_epoch_453",
+    "stage2_file": "emnlp/pvn2/sureal/SuReAL_pvn2plus_bidomain_seendata_F_stage2_RL_epoch_453",
+    "wasserstein_reward": true,
+    "explore_reward_only": false
+  },
+
+  "Data": {
+    "object_database_sim": "object_database_test_sim_seen",
+    "object_database_real": null,
+    "index_supervised_data_by_env": true,
+    "collect_n_at_a_time": 1
+  },
+
+  "AirSim": {
+    "ClockSpeed": 2.0
+  }
+}

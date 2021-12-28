@@ -1,0 +1,13 @@
+{
+  "@include": [
+    "rss_2020/train_SUP_fspvn_stage1_noD"
+  ],
+  "Setup": {
+    "run_name": "train_SUP_fspvn_stage1-deaf-noD"
+  },
+  "ModelPVN": {
+    "Stage1": {
+      "deaf": true
+    }
+  }
+}

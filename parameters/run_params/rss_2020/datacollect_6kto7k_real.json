@@ -1,0 +1,47 @@
+{
+  "@include": [
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger",
+    "include/training/supervised",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/models/fspvn_cage_bidomain",
+    "environments/cage_nl_augmented",
+    "rss_2020/rss_2020_overlay"
+  ],
+  "Setup":
+  {
+    "model": "oracle",
+    "run_name": "data_collect_jan23_6kto7k",
+    "num_workers": 1,
+    "cuda": true,
+    "max_envs": -1,
+    "env_range_start": 6000,
+    "env_range_end": 7000,
+    "real_drone": true,
+    "world_size_m": 4.7,
+    "min_augment_len": 1,
+
+    "augment_len": 1,
+    "empty_envs": false,
+
+
+    "corpus_name": "7000",
+    "use_wordset_from_corpus": "7000"
+  },
+  "AirSim":
+  {
+    "ClockSpeed": 1.0
+  },
+  "Data":
+  {
+    "dataset_name": "real_6kto7k",
+    "collect_n_at_a_time": 2
+  }
+}

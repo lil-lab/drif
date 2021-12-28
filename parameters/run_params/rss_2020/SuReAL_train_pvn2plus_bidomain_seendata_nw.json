@@ -1,0 +1,109 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/rss_2020_overlay",
+    "include/models/pvn_cage_bidomain_with_unseen",
+    "rss_2020/pvn2_overlay",
+    "include/models/pvn_critic",
+    "rss_2020/bidomain_train_overlay",
+    "rss_2020/sureal_overlay"
+  ],
+
+
+  "Setup": {
+    "model": "rpn_fspvn_full_bidomain",
+    "model_file": null,
+    "sup_model": "pvn_stage1_bidomain",
+    "sup_model_file": "emnlp/pvn2/supervised_pvn_stage1_bidomain_pvn2plus_stage1_aug1-2_seendata_sim_epoch_27",
+    "sup_critic_model": "pvn_stage1_critic",
+
+    "sim_model_file": "emnlp/pvn2/supervised_pvn_stage1_bidomain_pvn2plus_stage1_aug1-2_seendata_sim_epoch_27",
+    "real_model_file": "emnlp/pvn2/supervised_pvn_stage1_bidomain_pvn2plus_stage1_aug1-2_seendata_real_epoch_27",
+    "critic_model_file": "emnlp/pvn2/supervised_pvn_stage1_critic_pvn2plus_stage1_aug1-2_seendata_critic_epoch_27",
+
+    "run_name": "SuReAL_pvn2plus_bidomain_seendata_nw3",
+    "num_workers": null,
+    "augment_len": 2,
+    "min_augment_len": 1,
+
+    "trajectory_length": 35,
+    "sup_trajectory_length": 35,
+    "rl_trajectory_length": 40,
+
+    "env_range_start": 0,
+    "env_range_end": 7000,
+    "rl_env_range_start": 0,
+    "rl_env_range_end": 7000,
+
+    "ŗeal_drone": false,
+
+    "eval_landmark_side": false,
+    "eval_nl": false,
+
+    "corpus_name": "7000",
+    "use_wordset_from_corpus": "7000",
+
+    "local_ray": false
+  },
+  "RL": {
+    "num_workers": 4,
+    "iterations_per_epoch": 50,
+    "test_iterations_per_epoch": 2,
+    "num_rollouts_per_iter": 16,
+
+    "entropy_coef": 1e-3,
+    "entropy_schedule_epochs": [200],
+    "entropy_schedule_multipliers": [0.1]
+  },
+  "AirSim": {
+    "ClockSpeed": 3.0
+  },
+  "Training": {
+    "batch_size": 1,
+    "num_loaders": 0,
+    "lr": 0.0001
+  },
+  "Data": {
+    "dataset_names": [
+      "8k_full"
+    ],
+    "object_database_sim": "train_sim",
+    "object_database_real": null,
+    "index_supervised_data_by_env": true
+  },
+  "SuReAL": {
+    "sim_seed_dataset": "8k_full",
+    "real_seed_dataset": "real_seen",
+    "rollout_device": "cuda:0",
+    "rl_train_device": "cuda:0",
+    "sup_train_device": "cuda"
+  },
+
+  "PVNWrapper": {
+    "add_model_state_to_rollout_data": false,
+    "stage1_model_type": "PVNv2",
+    "stage1_file": null,
+    "stage2_file": null,
+    "wasserstein_reward": true,
+    "wd_reward": {
+      "stop_alpha": 0.5,
+      "stop_p_alpha": 0.0,
+      "visit_alpha": 0.3,
+      "exploration_alpha": 1.0,
+      "stop_oob_alpha": 3.0,
+      "step_alpha": 0.04
+    },
+    "explore_reward_only": false
+  }
+}

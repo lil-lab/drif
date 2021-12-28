@@ -1,0 +1,47 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/models/object_reference_recognizer",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/pvn2_overlay",
+    "rss_2020/bidomain_train_overlay"
+  ],
+  "Setup":
+  {
+    "model": "object_reference_recognizer_with_db",
+    "model_file": null,
+    "critic_model": null,
+
+    "run_name": "train_object_reference_recognizer_with_db_hcat_1",
+    "num_workers": 1,
+    "augment_len": 1,
+    "min_augment_len": 1,
+    "trajectory_length": 10
+  },
+
+  "Training":
+  {
+    "batch_size": 64,
+    "num_loaders": 30,
+    "lr": 0.001,
+    "weight_decay": 1e-3,
+    "optimizer": "adam"
+  },
+
+  "Data":
+  {
+    "object_database_sim": "train_sim",
+    "object_database_real": "train_real"
+  }
+}

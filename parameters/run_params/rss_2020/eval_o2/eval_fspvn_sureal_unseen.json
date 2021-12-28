@@ -1,0 +1,102 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/models/object_reference_recognizer",
+    "rss_2020/models/fspvn_cage_bidomain",
+    "rss_2020/models/region_proposal_network",
+    "rss_2020/models/region_refinement_network",
+    "rss_2020/models/simple_matching_network",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/fspvn_overlay",
+    "rss_2020/bidomain_train_overlay",
+    "rss_2020/sureal_overlay"
+  ],
+  "Setup": {
+    "model": "rpn_fspvn_full_bidomain",
+    "model_file": null,
+    "run_name": "eval_fspvn_SuReAL_unseen_T_semibigO",
+    "num_workers": 1,
+    "augment_len": 2,
+    "min_augment_len": 1,
+    "trajectory_length": 50,
+    "env_range_start": 7100,
+    "env_range_end": 7200,
+    "ŗeal_drone": false,
+
+    "local_ray": true,
+
+    "corpus_name": "8000",
+    "use_wordset_from_corpus": "7000",
+
+    "eval_nl": true
+  },
+  "Data": {
+    "object_database_sim": "object_database_test_sim",
+    "object_database_real": null,
+    "index_supervised_data_by_env": true,
+    "collect_n_at_a_time": 1
+  },
+  "SuReAL": {
+    "sim_seed_dataset": "8k_full"
+  },
+  "ModelPVN": {
+    "object_recognizer_model_name": "components/supervised_object_reference_recognizer_train_object_reference_recognizer_2layer_h20_adam_dropout_balanced_epoch_150",
+    "Stage1": {
+      "plan_every_n_steps": 1,
+      "perturb_maps": false,
+      "SegmentationModel": {
+        "rpn_model_name": "components/data7/supervised_region_proposal_network_train_region_proposal_network_sim_data7_epoch_25",
+        "refinement_model_name": "components/data7/supervised_region_refinement_network_train_region_refinement_network_sim_data7_epoch_1000",
+        "matching_model_name": "components/data7/supervised_multi_matching_network_train_MULTI_matching_sim_data7_epoch_9000"
+      },
+      "use_visitation_discriminator": true,
+      "distributed_training_of_visitation_discriminator": true
+    }
+  },
+  "PVNWrapper": {
+    "stage1_model_type": "RPN_FSPVN",
+    "stage1_file-": "pretrained_stage1/supervised_rpn_fspvn_stage1_train_SUP_fspvn_stage1-data7_aug1-2_maxmask_DP_RR2_SharedEmb_epoch_30",
+    "stage2_file-": "pretrained_stage2/supervised_rpn_fspvn_stage2_train_SUP_fspvn_stage2-aug1-2_epoch_0",
+    "stage1_file--": "tst/SuReAL_train_rpn_fspvn_aug1-2_ray_data7_maxmask_SharedEmb_pretrained-BC5_stage1_RL_epoch_52",
+    "stage2_file--": "tst/SuReAL_train_rpn_fspvn_aug1-2_ray_data7_maxmask_SharedEmb_pretrained-BC5_stage2_RL_epoch_52",
+    "stage1_file___": "tst/SuReAL_train_rpn_fspvn_aug1-2_ray_data7_maxmask_SharedEmb_fromscratch_3_stage1_RL_epoch_135",
+    "stage2_file___": "tst/SuReAL_train_rpn_fspvn_aug1-2_ray_data7_maxmask_SharedEmb_fromscratch_3_stage2_RL_epoch_135",
+    "stage1_file+": "tst/SuReAL_train_rpn_fspvn_aug1-2_ray_data7_hypertune_stop0.3_stage1_RL_epoch_202",
+    "stage2_file+": "tst/SuReAL_train_rpn_fspvn_aug1-2_ray_data7_hypertune_stop0.3_stage2_RL_epoch_202",
+    "stage1_file=": "tst/SuReAL_train_rpn_fspvn_aug1-2_ray_data7_hypertune_stop0.3_bigvalue_stage1_RL_epoch_216",
+    "stage2_file=": "tst/SuReAL_train_rpn_fspvn_aug1-2_ray_data7_hypertune_stop0.3_bigvalue_stage2_RL_epoch_216",
+    "stage1_file---": "tst/RL+SuReAL_train_rpn_fspvn_aug1-2_ray_data7_s03_stage1_RL_epoch_350",
+    "stage2_file---": "tst/RL+SuReAL_train_rpn_fspvn_aug1-2_ray_data7_s03_stage2_RL_epoch_350",
+    "stage1_file----": "pretrained_stage1/supervised_rpn_fspvn_stage1_train_SUP_fspvn_stage1-data7_aug1-2_discriminator_v2_DP_epoch_39",
+
+    "stage1_file": "emnlp/SuReAL_train_rpn_fspvn_aug1-2_ray_data7_Dv2_stage2v2_innernorm01_stage1_RL_epoch_182",
+    "stage2_file": "emnlp/SuReAL_train_rpn_fspvn_aug1-2_ray_data7_Dv2_stage2v2_innernorm01_stage2_RL_epoch_182",
+    "stage1_file_": "pretrained_stage1/supervised_rpn_fspvn_stage1_train_SUP_fspvn_stage1-data7_aug1-2_discriminator_v2_DP_epoch_29",
+    "stage2_file_": "emnlp/supervised_rpn_fspvn_stage2_train_SUP_fspvn_stage2v2-aug1-2_epoch_0",
+    "add_model_state_to_rollout_data": true
+  },
+  "AirSim": {
+    "ClockSpeed": 2.0
+  },
+  "RL": {
+    "num_workers": 1,
+    "iterations_per_epoch": 50,
+    "test_iterations_per_epoch": 2,
+    "num_rollouts_per_iter": 16,
+
+    "entropy_coef": 1e-3,
+    "entropy_schedule_epochs": [150],
+    "entropy_schedule_multipliers": [0.1]
+  }
+}

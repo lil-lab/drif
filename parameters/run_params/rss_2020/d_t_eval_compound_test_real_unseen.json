@@ -1,0 +1,31 @@
+{
+  "MultipleEval": {
+    "run_name": "all_test_unseen_real",
+    "one_at_a_time": true,
+    "SetupOverlay":{
+      "real_drone": true
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "d_t_eval_average_real",
+        "param_file": "rss_2020/d_t_eval_average_real"
+      },
+      {
+      "param_namespace": "d_t_eval_oracle_real",
+      "param_file": "rss_2020/d_t_eval_oracle_real"
+      },
+      {
+      "param_namespace": "d_t_eval_fspvn_sureal_unseen_real",
+      "param_file": "rss_2020/d_t_eval_fspvn_sureal_unseen_real"
+      },
+      {
+      "param_namespace": "d_t_eval_pvn2_alldata_sureal_unseen_real",
+      "param_file": "rss_2020/d_t_eval_pvn2_alldata_sureal_unseen_real"
+      },
+      {
+      "param_namespace": "d_t_eval_pvn2_seendata_sureal_unseen_real",
+      "param_file": "rss_2020/d_t_eval_pvn2_seendata_sureal_unseen_real"
+      }
+    ]
+  }
+}

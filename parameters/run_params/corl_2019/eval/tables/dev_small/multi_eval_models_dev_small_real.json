@@ -1,0 +1,34 @@
+{
+  "MultipleEval": {
+    "run_name": "models_dev_small_real",
+    "one_at_a_time": true,
+    "SetupOverlay":{
+      "real_drone": true
+    },
+    "SystemsParams": [
+      {
+        "param_namespace": "eval_pvn2_rail_dev_small",
+        "param_file": "corl_2019/eval/tables/dev_small/eval_pvn2_rail_dev_small_real"
+      },
+      {
+        "param_namespace": "eval_pvn2_rail_noinstr_dev_small",
+        "param_file": "corl_2019/eval/tables/dev_small/eval_pvn2_rail_noinstr_dev_small_real"
+      },
+      {
+        "param_namespace": "eval_pvn2_rail_50real_dev_small",
+        "param_file": "corl_2019/eval/tables/dev_small/eval_pvn2_rail_50real_dev_small_real"
+      },
+      {
+        "param_namespace": "eval_pvn2_rail_10real_dev_small",
+        "param_file": "corl_2019/eval/tables/dev_small/eval_pvn2_rail_10real_dev_small_real"
+      }
+    ],
+
+    "UnusedPrams": [
+      {
+        "param_namespace": "eval_pvn2_rail_nodiscr_dev_small",
+        "param_file": "corl_2019/eval/tables/dev_small/eval_pvn2_rail_nodiscr_dev_small_real"
+      }
+    ]
+  }
+}

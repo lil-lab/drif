@@ -1,0 +1,13 @@
+{
+  "@include":[
+    "corl_2019/eval/systems/eval_pvn2_rail_Lexp",
+    "corl_2019/eval/datasplits/dev_small",
+    "corl_2019/eval/eval_real_overlay"
+  ],
+  "Setup":{
+    "run_name": "eval_pvn2_rail_Lexp_dev_small_real",
+    "real_drone": true,
+    "min_augment_len": 1,
+    "augment_len": 2
+  }
+}

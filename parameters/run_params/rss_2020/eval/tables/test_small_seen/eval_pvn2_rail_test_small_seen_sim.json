@@ -1,0 +1,10 @@
+{
+  "@include":[
+    "rss_2020/eval/datasplits/test_small_seen",
+    "rss_2020/eval/systems/eval_pvn2_rail"
+  ],
+  "Setup":{
+    "run_name": "eval_pvn2_rail_test_small_seen_sim",
+    "real_drone": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "@include": [
+    "airsim/settings_corl_eval",
+    "environments/corl_18",
+    "include/units",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics",
+    "include/training/dagger",
+    "include/models/corl",
+    "include/models/corl_aux"
+  ],
+
+  "Setup":
+  {
+    "model": "pvn_full",
+    "run_name": "evaluate_corl_pvn",
+    "num_workers": 1,
+    "cuda": true,
+    "max_envs": -1,
+    "eval_landmark_side": false,
+    "eval_nl": true
+  },
+
+  "Rollout":
+  {
+    "oracle_type": "BasicCarrotPlanner"
+  },
+
+  "ModelPVN":
+  {
+    "train_action_from_dstar": true,
+    "run_action_from_dstar": false,
+    "action_in_path_only": false,
+    "action_recurrence": false,
+    "perturb_maps": false,
+    "run_auxiliaries": false,
+    "load_action_policy": false,
+    "compute_prior": false,
+    "use_prior_only": false,
+
+    "aux":{
+      "class_map": true,
+      "grounding_map": true,
+      "lang": true,
+      "path": true,
+      "regularize_map": false
+    }
+  }
+}

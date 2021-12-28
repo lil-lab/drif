@@ -1,0 +1,43 @@
+{
+  "@include": [
+    "rss_2020/eval/eval_includes",
+    "rss_2020/fspvn_overlay",
+    "rss_2020/eval/eval_overlay"
+  ],
+
+  "Setup":
+  {
+    "run_name": "eval_fspvn_sureal",
+    "model": "rpn_fspvn_full_bidomain",
+    "model_file": false,
+    "corpus_name": null,
+    "use_wordset_from_corpus": null
+  },
+
+  "ModelPVN": {
+    "Stage1": {
+      "perturb_maps": false,
+      "static_nod": true,
+      "plan_every_n_steps": 1,
+
+      "object_recognizer_model_name": "TODO",
+
+      "SegmentationModel": {
+        "rpn_model_name_sim": "TODO",
+        "refinement_model_name_sim": "TODO",
+        "matching_model_name_sim": "TODO",
+
+        "rpn_model_name_real": "TODO",
+        "refinement_model_name_real": "TODO",
+        "matching_model_name_real": "TODO"
+      }
+    }
+  },
+  "PVNWrapper":
+  {
+    "learning_mode": "reinforcement_learning",
+    "stage1_file": "sureal/fspvn/fspvn_stage1",
+    "stage2_file": "sureal/fspvn/fspvn_stage2",
+    "add_model_state_to_rollout_data": true
+  }
+}

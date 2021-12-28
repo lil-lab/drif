@@ -1,0 +1,89 @@
+{
+  "@include": [
+    "environments/rss2020",
+    "airsim/settings_cage",
+    "include/setup_base",
+    "include/basic_carrot_planner",
+    "include/simple_carrot_planner",
+    "include/pomdp_interface",
+    "include/dynamics_cage",
+    "include/units_cage",
+    "include/training/training",
+    "include/training/dagger_cage",
+    "include/training/supervised",
+    "include/models/pvn_cage_bidomain_with_unseen",
+    "include/models/pvn_critic",
+    "include/airsim_drone_controller_cage",
+    "rss_2020/rss_2020_overlay",
+    "rss_2020/pvn2_overlay",
+    "rss_2020/bidomain_train_overlay",
+    "rss_2020/sureal_overlay"
+  ],
+  "Setup": {
+    "run_name": "SuReAL_pvn2plus_bidomain_seendata_F",
+    "model": null,
+    "rl_model": "pvn_full_bidomain",
+    "sup_model": "pvn_stage1_bidomain",
+    "sup_critic_model": "pvn_stage1_critic",
+    "sim_model_file": "emnlp/pvn2/supervised_pvn_stage1_bidomain_pvn2plus_stage1_aug1-2_seendata_sim_epoch_15",
+    "real_model_file": "emnlp/pvn2/supervised_pvn_stage1_bidomain_pvn2plus_stage1_aug1-2_seendata_real_epoch_15",
+    "critic_model_file": "emnlp/pvn2/supervised_pvn_stage1_critic_pvn2plus_stage1_aug1-2_seendata_critic_epoch_15",
+    "env_range_start": 0,
+    "env_range_end": 7000,
+    "rl_env_range_start": 0,
+    "rl_env_range_end": 7000,
+    "min_augment_len": 1,
+    "augment_len": 2,
+    "num_workers": 1,
+    "cuda": true,
+    "max_envs": -1,
+    "world_size_m": 4.7,
+    "sup_trajectory_length": 35,
+    "rl_trajectory_length": 40,
+    "trajectory_length": 35,
+    "real_drone": false,
+    "eval_landmark_side": false,
+    "eval_nl": false,
+    "corpus_name": "7000",
+    "use_wordset_from_corpus": "7000"
+  },
+  "RL": {
+    "num_workers": 4
+  },
+  "AirSim": {
+    "ClockSpeed": 2.0
+  },
+  "PVNWrapper": {
+    "learning_mode": "reinforcement_learning",
+    "pvn_version": "v2",
+    "stage1_file": false,
+    "stage2_file": false,
+    "wasserstein_reward": true,
+    "wd_reward": {
+      "stop_alpha": 0.5,
+      "stop_p_alpha": 0.0,
+      "visit_alpha": 0.3,
+      "exploration_alpha": 1.0,
+      "stop_oob_alpha": 3.0,
+      "step_alpha": 0.04
+    },
+    "explore_reward_only": false
+  },
+  "SuReAL": {
+    "sim_seed_dataset": "8k_full",
+    "real_seed_dataset": "real_seen",
+    "rollout_device": "cuda:0",
+    "rl_train_device": "cuda:0",
+    "sup_train_device": "cuda"
+  },
+  "Training": {
+    "critic_loaders": 1,
+    "model_common_loaders": 1,
+    "model_sim_loaders": 1
+  },
+
+  "Data_Debug_": {
+    "train_size_cap" : 10,
+    "eval_size_cap": 10
+  }
+}

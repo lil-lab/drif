@@ -1,0 +1,10 @@
+{
+  "@include":[
+    "rss_2020/eval/systems/eval_average",
+    "rss_2020/eval/datasplits/test_small_unseen"
+  ],
+  "Setup":{
+    "run_name": "eval_average_test_small_unseen_real",
+    "real_drone": false
+  }
+}

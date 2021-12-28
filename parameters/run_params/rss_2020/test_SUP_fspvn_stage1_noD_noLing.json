@@ -1,0 +1,13 @@
+{
+  "@include": [
+    "rss_2020/train_SUP_fspvn_stage1_noD_noLing"
+  ],
+  "Setup":
+  {
+    "model": "rpn_fspvn_stage1",
+    "model_file": "emnlp/fspvn_stage1/supervised_rpn_fspvn_stage1_train_SUP_fspvn_stage1-data7_aug1-2_noD_noLing_affinity_epoch_29",
+    "critic_model": null,
+
+    "run_name": "test_SUP_fspvn_stage1-data7_aug1-2_noD_noLing_affinity"
+  }
+}

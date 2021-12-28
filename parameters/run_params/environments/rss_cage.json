@@ -1,0 +1,10 @@
+{
+  "Environment":
+  {
+    "airsim_settings_path": "~/Documents/AirSim/settings.json",
+    "config_dir": "/home/clic/shelf_space/unreal_workspace_cage",
+    "config_dir_perception": "/home/clic/catkin_ws/data",
+    "real_drone": false,
+    "templates": true
+  }
+}

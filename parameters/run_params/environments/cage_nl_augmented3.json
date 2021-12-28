@@ -1,0 +1,12 @@
+{
+  "Environment":
+  {
+    "airsim_settings_path": "~/Documents/AirSim/settings.json",
+    "simulator_path": "~/shelf_space/droning/unreal_project/DroneSimLab/LinuxNoEditor/MyProject5.sh",
+    "sim_config_dir": "/home/valts/unreal_config/",
+    "config_dir": "/home/valts/box/unreal_config_nl_cage_aug3",
+    "templates": false,
+    "annotation_set": "7000",
+    "augment_len": 3
+  }
+}

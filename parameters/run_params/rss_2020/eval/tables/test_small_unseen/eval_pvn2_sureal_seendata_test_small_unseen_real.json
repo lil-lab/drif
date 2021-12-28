@@ -1,0 +1,11 @@
+{
+  "@include":[
+    "rss_2020/eval/systems/eval_pvn2_sureal_seendata",
+    "rss_2020/eval/datasplits/test_small_unseen",
+    "rss_2020/eval/eval_real_overlay"
+  ],
+  "Setup":{
+    "run_name": "eval_pvn2_sureal_seendata_test_small_unseen_real",
+    "real_drone": true
+  }
+}

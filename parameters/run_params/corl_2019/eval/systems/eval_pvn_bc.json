@@ -1,0 +1,26 @@
+{
+  "@include": [
+    "corl_2019/eval/eval_includes",
+    "corl_2019/pvn_overlay",
+    "corl_2019/eval/eval_overlay"
+  ],
+
+  "Setup":
+  {
+    "run_name": "eval_pvn_original_BC",
+    "model": "pvn_full_bidomain"
+  },
+  "ModelPVN": {
+    "Stage1": {
+      "perturb_maps": false,
+      "plan_every_n_steps": 1
+    }
+  },
+  "PVNWrapper":
+  {
+    "learning_mode": "reinforcement_learning",
+    "stage1_file_sim": "stage1/aug1-2_original/supervised_pvn_original_stage1_bidomain_pvn_original_stage1_aug1-2_sim_epoch_25",
+    "stage1_file_real": "stage1/aug1-2_original/supervised_pvn_original_stage1_bidomain_pvn_original_stage1_aug1-2_real_epoch_25",
+    "stage2_file": "stage2/pvn_original-bc/supervised_pvn_full_bidomain_ground_truth_pvn2_sup_stage2_ac_slow_nostruct_noclip_epoch_5"
+  }
+}
